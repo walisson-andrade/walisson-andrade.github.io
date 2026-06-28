@@ -1,21 +1,17 @@
-# Portfólio — Walisson Andrade
+# Walisson Andrade
 
-Landing page profissional com projetos de automação (n8n) e desenvolvimento full stack.
+Portfólio profissional com projetos de automação (n8n), desenvolvimento full stack e análise de dados.
 
-## Como rodar
+**https://walisson-andrade.github.io**
+
+## Stack
+
+Astro 6 · Tailwind CSS v4 · TypeScript · GitHub Pages
+
+## Desenvolvimento local
 
 ```bash
 docker compose up
 ```
 
-Acesse [http://localhost:4321](http://localhost:4321).
-
-O hot reload funciona automaticamente — edite os arquivos em `src/` e o browser atualiza.
-
-## Build de produção
-
-```bash
-docker compose run --rm portfolio npm run build
-```
-
-O output estático fica em `dist/`.
+Acesse http://localhost:4321
