@@ -1,0 +1,29 @@
+---
+import { loadAutomations } from "@/lib/loadAutomations";
+import SectionHeading from "./SectionHeading.astro";
+import AutomationCard from "./AutomationCard.astro";
+
+const automations = loadAutomations();
+---
+
+<section class="max-w-[1180px] mx-auto px-8 pt-14 pb-24">
+  <div
+    class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 md:gap-[18px]"
+  >
+    <SectionHeading tag="Automações" title="Automações em Produção" />
+    <div
+      class="flex items-center gap-2.5 px-3.5 py-[9px] bg-[#151515] border border-[#262626] rounded-[10px]"
+    >
+      <span class="w-2 h-2 rounded-sm bg-accent"></span>
+      <span class="font-mono text-xs text-text-secondary">
+        Capturas ilustrativas. Fluxos reais sob acordo de confidencialidade
+      </span>
+    </div>
+  </div>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[22px] mt-[42px]"
+  >
+    {automations.map((auto) => <AutomationCard automation={auto} />)}
+  </div>
+</section>

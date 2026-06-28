@@ -1,0 +1,47 @@
+---
+import { site } from "@/data/site";
+---
+
+<section id="contato" class="relative overflow-hidden border-t border-[#1E1E1E]">
+  <div
+    class="absolute -bottom-[200px] left-1/2 -translate-x-1/2 w-[680px] h-[420px] pointer-events-none"
+    style="background: radial-gradient(ellipse at center, rgba(255,109,66,0.16), transparent 68%); filter: blur(34px);"
+  >
+  </div>
+
+  <div class="max-w-[760px] mx-auto px-8 py-26 text-center relative">
+    <span
+      class="font-mono text-[12.5px] tracking-[0.14em] uppercase text-accent"
+    >
+      // Vamos construir
+    </span>
+    <h2
+      class="font-heading font-semibold text-[clamp(32px,5vw,46px)] leading-[1.12] tracking-tight text-[#F6F6F4] mt-[18px]"
+    >
+      {site.cta} <span class="text-accent">Vamos conversar.</span>
+    </h2>
+
+    <div class="flex items-center justify-center gap-3.5 mt-9 flex-wrap">
+      <a
+        href={site.linkedin}
+        target="_blank"
+        rel="noopener"
+        class="no-underline inline-flex items-center gap-[9px] px-[26px] py-[15px] rounded-[11px] bg-accent text-bg text-[15px] font-semibold hover:-translate-y-0.5 hover:brightness-105 transition-all"
+      >
+        LinkedIn <span class="text-base">→</span>
+      </a>
+      <a
+        href={site.whatsappLink}
+        target="_blank"
+        rel="noopener"
+        class="no-underline inline-flex items-center gap-[9px] px-[26px] py-[15px] rounded-[11px] bg-transparent border border-border-hover text-[#E4E4E4] text-[15px] font-medium hover:border-[#4A4A4A] hover:bg-[#161616] transition-all"
+      >
+        WhatsApp <span class="font-mono text-sm text-text-secondary">{site.whatsapp}</span>
+      </a>
+    </div>
+
+    <p class="mt-6 font-mono text-sm text-text-secondary">
+      {site.email}
+    </p>
+  </div>
+</section>

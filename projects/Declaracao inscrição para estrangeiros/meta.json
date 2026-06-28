@@ -1,0 +1,9 @@
+{
+  "titulo": "Geração Automática de Declarações de Inscrição",
+  "descricao": "Lê dados de alunos estrangeiros em Google Sheets, preenche um template de declaração em Google Docs com os dados do aluno e do curso, converte em PDF e envia ao Google Drive.",
+  "problema": "Declarações de inscrição para alunos estrangeiros eram preenchidas manualmente uma a uma, gerando atrasos e erros em dados como datas, passaportes e valores.",
+  "resultado": "Documentos gerados automaticamente a cada 30 minutos, sem erros de preenchimento.",
+  "metrica": "Geração automática de documentos PDF a cada 30 minutos",
+  "tecnologias": ["n8n", "Google Sheets", "Google Docs", "Google Drive"],
+  "destaques": ["Template dinâmico em Google Docs", "Conversão automática para PDF", "Organização por pasta do aluno no Drive", "Execução periódica a cada 30 minutos"]
+}

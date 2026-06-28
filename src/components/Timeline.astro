@@ -1,0 +1,43 @@
+---
+import { experiences } from "@/data/experience";
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section id="experiencia" class="max-w-[1180px] mx-auto px-8 py-24">
+  <SectionHeading tag="Trajetória" title="Experiência" />
+
+  <div class="relative mt-12 max-w-[760px]">
+    <div class="absolute left-[6px] top-[6px] bottom-[30px] w-px bg-[#272727]">
+    </div>
+
+    {
+      experiences.map((exp) => (
+        <div class="relative pl-[38px] pb-[38px] last:pb-0">
+          <div
+            class:list={[
+              "absolute left-0 top-1 w-[13px] h-[13px] rounded-full",
+              exp.isCurrent
+                ? "bg-accent shadow-[0_0_0_4px_#0F0F0F,0_0_12px_rgba(255,109,66,0.6)]"
+                : "bg-[#2A2A2A] border border-[#3A3A3A] shadow-[0_0_0_4px_#0F0F0F]",
+            ]}
+          />
+          <div
+            class:list={[
+              "font-mono text-[13px] mb-[7px]",
+              exp.isCurrent ? "text-accent" : "text-text-secondary",
+            ]}
+          >
+            {exp.period}
+          </div>
+          <div class="font-heading font-semibold text-[21px] text-[#F2F2F2]">
+            {exp.company}{" "}
+            <span class="font-normal text-base text-[#888]">· {exp.role}</span>
+          </div>
+          <p class="text-[14.5px] leading-relaxed text-text-secondary mt-[9px] max-w-[560px]">
+            {exp.description}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

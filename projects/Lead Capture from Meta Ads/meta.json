@@ -1,0 +1,9 @@
+{
+  "titulo": "Captura de Leads de Meta Ads",
+  "descricao": "Recebe leads de Facebook e Instagram Ads via webhook, normaliza os dados, registra no backoffice e aciona fluxos de follow-up automaticamente.",
+  "problema": "Leads de campanhas de mídia paga chegavam sem padronização e eram processados manualmente antes de entrar no funil de vendas.",
+  "resultado": "Leads capturados e registrados automaticamente em tempo real, prontos para follow-up.",
+  "metrica": "Processamento de leads em tempo real via webhook",
+  "tecnologias": ["n8n", "Meta Ads (Facebook/Instagram)", "Webhooks"],
+  "destaques": ["Webhook de entrada para lead gen", "Normalização de campos", "Chamada a sub-workflows modulares para registro e follow-up"]
+}

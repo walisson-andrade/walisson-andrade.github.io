@@ -1,0 +1,21 @@
+---
+import { fullstackProjects } from "@/data/fullstack-projects";
+import SectionHeading from "./SectionHeading.astro";
+import FullStackProjectCard from "./FullStackProjectCard.astro";
+---
+
+<section id="projetos" class="max-w-[1180px] mx-auto px-8 pt-14 pb-24">
+  <SectionHeading
+    tag="Projetos full stack"
+    title="Construído para produção"
+    subtitle="Quatro sistemas reais, do diagnóstico financeiro à inspeção de campo. Cada um com impacto medido."
+  />
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-[22px] mt-11">
+    {
+      fullstackProjects.map((project) => (
+        <FullStackProjectCard project={project} />
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,9 @@
+{
+  "titulo": "Geração de Oportunidades Comerciais a partir da Newsletter",
+  "descricao": "Analisa cliques da newsletter mensal no CRM, identifica leads engajados que ainda não são membros da comunidade e cria oportunidades comerciais automaticamente.",
+  "problema": "Leads que demonstravam interesse via newsletter não eram convertidos em oportunidades de venda — o engajamento se perdia.",
+  "resultado": "Leads engajados são automaticamente convertidos em oportunidades no CRM, com notas de contexto.",
+  "metrica": "Criação automática de oportunidades mensais a partir de dados de engajamento",
+  "tecnologias": ["n8n", "GoHighLevel CRM", "Discord"],
+  "destaques": ["Cruzamento entre dados de newsletter e membros do Discord", "Deduplicação de contatos", "Execução mensal agendada"]
+}

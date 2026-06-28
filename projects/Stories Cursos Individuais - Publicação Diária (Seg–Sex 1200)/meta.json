@@ -1,0 +1,9 @@
+{
+  "titulo": "Stories de Cursos — Publicação Diária Automática",
+  "descricao": "De segunda a sexta, publica os stories de cursos aprovados no Instagram e Facebook da unidade correspondente, com upload temporário em AWS S3.",
+  "problema": "A publicação diária de stories em múltiplas contas de redes sociais era feita manualmente, consumindo tempo da equipe de marketing.",
+  "resultado": "Publicação automática nos horários definidos, em múltiplas contas Instagram e Facebook.",
+  "metrica": "Publicação diária automática em múltiplas contas sociais",
+  "tecnologias": ["n8n", "Instagram (Graph API)", "Facebook (Graph API)", "AWS S3"],
+  "destaques": ["Publicação em múltiplas contas por unidade", "Storage temporário em S3 com cleanup automático", "Filtro por data de publicação agendada"]
+}

@@ -1,0 +1,9 @@
+{
+  "titulo": "Notificação de Novos Cursos para Leads via SMS",
+  "descricao": "Cruza leads do Supabase com alunos matriculados e envia SMS personalizado informando sobre abertura de novos cursos.",
+  "problema": "Leads qualificados não eram notificados sobre novos cursos a tempo, resultando em perda de matrículas potenciais.",
+  "resultado": "Leads relevantes passaram a receber notificações SMS automatizadas assim que novos cursos são abertos.",
+  "metrica": "Ativação automática de leads por SMS",
+  "tecnologias": ["n8n", "Supabase", "SMS API"],
+  "destaques": ["Cruzamento de dados entre leads e alunos", "Envio em lotes com controle de volume", "Sub-workflow reutilizável"]
+}

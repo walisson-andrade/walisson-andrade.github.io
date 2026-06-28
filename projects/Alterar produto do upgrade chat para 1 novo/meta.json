@@ -1,0 +1,9 @@
+{
+  "titulo": "Migração Automática de Assinaturas no Stripe",
+  "descricao": "Identifica assinaturas Stripe com renovação próxima, cancela o plano antigo, cria o novo com preço atualizado e atribui o role correto no Discord.",
+  "problema": "A mudança de plano de assinatura exigia intervenção manual em cada cliente — cancelar o antigo, criar o novo no Stripe e atualizar permissões no Discord.",
+  "resultado": "Processo 100% automatizado com execução diária, sem intervenção humana.",
+  "metrica": "Migração automática de assinaturas com zero intervenção manual",
+  "tecnologias": ["n8n", "Stripe", "Discord"],
+  "destaques": ["Processamento em lotes (splitInBatches)", "Lógica condicional por tier de preço", "Atribuição automática de roles no Discord"]
+}

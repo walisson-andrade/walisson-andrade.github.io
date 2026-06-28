@@ -1,0 +1,9 @@
+{
+  "titulo": "Chatbot de Vendas — Abertura de Conversa com IA",
+  "descricao": "Recebe leads de Meta Ads via webhook, busca informações de cursos e preços, e usa um agente GPT para gerar e enviar mensagens de abertura personalizadas via WhatsApp.",
+  "problema": "Leads de campanhas de marketing ficavam sem resposta por horas ou recebiam mensagens genéricas, reduzindo a taxa de conversão.",
+  "resultado": "Resposta imediata e personalizada para cada lead, com contexto do curso de interesse.",
+  "metrica": "Tempo de primeiro contato reduzido de horas para segundos",
+  "tecnologias": ["n8n", "OpenAI (GPT)", "WhatsApp (Evolution API)", "PostgreSQL", "Google Sheets", "Meta Ads"],
+  "destaques": ["Agente de IA para geração de mensagens", "Integração com WhatsApp via Evolution API", "Contexto persistido em PostgreSQL", "Sub-workflows para dados de cursos"]
+}

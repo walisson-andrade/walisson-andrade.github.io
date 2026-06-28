@@ -1,0 +1,9 @@
+{
+  "titulo": "Geração Automática de Tarefas Recorrentes no ClickUp",
+  "descricao": "Lê definições de tarefas recorrentes de um Google Sheets (frequência, dia, horário, responsável) e cria as tarefas automaticamente no ClickUp conforme a regra de agendamento.",
+  "problema": "Tarefas recorrentes eram criadas manualmente no ClickUp, com risco de esquecimento e inconsistência na atribuição de responsáveis.",
+  "resultado": "Tarefas criadas automaticamente a cada hora conforme critérios configuráveis na planilha.",
+  "metrica": "Criação automática horária de tarefas com regras configuráveis",
+  "tecnologias": ["n8n", "Google Sheets", "ClickUp"],
+  "destaques": ["Lógica de agendamento flexível (mensal, semanal, por dia)", "Atribuição aleatória ou fixa de responsáveis", "Execução horária"]
+}

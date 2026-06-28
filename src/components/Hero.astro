@@ -1,0 +1,62 @@
+---
+import { site } from "@/data/site";
+---
+
+<section id="top" class="relative overflow-hidden">
+  <div
+    class="absolute -top-40 left-1/2 w-[760px] h-[520px] pointer-events-none animate-[float-glow_9s_ease-in-out_infinite]"
+    style="background: radial-gradient(ellipse at center, rgba(255,109,66,0.22), rgba(255,109,66,0.05) 45%, transparent 70%); filter: blur(30px);"
+  >
+  </div>
+
+  <div class="max-w-[1180px] mx-auto px-8 pt-24 md:pt-32 pb-20 md:pb-26 relative">
+    <div class="animate-[reveal_0.7s_cubic-bezier(.2,.7,.2,1)_both]">
+      <span
+        class="inline-flex items-center gap-[9px] px-3.5 py-[7px] bg-[#151515] border border-[#262626] rounded-full font-mono text-xs text-[#A8A8A8]"
+      >
+        <span
+          class="w-[7px] h-[7px] rounded-full bg-accent animate-[pulse-dot_2.2s_ease-in-out_infinite]"
+        ></span>
+        {site.confidentiality}
+      </span>
+    </div>
+
+    <h1
+      class="animate-[reveal_0.7s_cubic-bezier(.2,.7,.2,1)_80ms_both] font-heading font-semibold text-[clamp(40px,8vw,74px)] leading-[1.03] tracking-[-0.035em] text-[#F7F7F5] mt-6 md:mt-[26px] max-w-[880px]"
+    >
+      Builder. Automação. IA. <span class="text-accent">Produção.</span>
+    </h1>
+
+    <p
+      class="animate-[reveal_0.7s_cubic-bezier(.2,.7,.2,1)_160ms_both] text-lg md:text-xl leading-relaxed text-[#9E9E9E] mt-6 md:mt-[26px] max-w-[600px]"
+    >
+      {site.subtitle}
+    </p>
+
+    <div
+      class="animate-[reveal_0.7s_cubic-bezier(.2,.7,.2,1)_240ms_both] flex items-center gap-4 mt-8 md:mt-[38px] flex-wrap"
+    >
+      <a
+        href="#contato"
+        class="no-underline inline-flex items-center gap-[9px] px-6 md:px-[26px] py-[15px] rounded-[11px] bg-accent text-bg text-[15px] font-semibold hover:-translate-y-0.5 hover:brightness-105 transition-all"
+      >
+        Vamos conversar <span class="text-base">→</span>
+      </a>
+      <a
+        href="#projetos"
+        class="no-underline inline-flex items-center px-6 md:px-[26px] py-[15px] rounded-[11px] bg-transparent border border-border-hover text-[#E4E4E4] text-[15px] font-medium hover:border-[#4A4A4A] hover:bg-[#161616] transition-all"
+      >
+        Ver projetos
+      </a>
+      <span
+        class="hidden sm:inline-flex items-center gap-2 ml-1.5 text-[13.5px] text-[#888] font-mono"
+      >
+        <span
+          class="w-2 h-2 rounded-full bg-success"
+          style="box-shadow: 0 0 8px rgba(55,200,113,0.7);"
+        ></span>
+        Disponível para projetos
+      </span>
+    </div>
+  </div>
+</section>

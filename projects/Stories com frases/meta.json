@@ -1,0 +1,9 @@
+{
+  "titulo": "Pipeline de Stories com Frases Inspiracionais (IA + Design + Publicação)",
+  "descricao": "Semanalmente, gera 30 frases com OpenAI, cria imagens de stories via Placid, envia para aprovação por e-mail, e publica diariamente no Instagram e Facebook de múltiplas contas.",
+  "problema": "A criação e publicação de stories diários era 100% manual — desde a redação das frases até o upload em cada rede social.",
+  "resultado": "Pipeline completo: geração, design, aprovação e publicação automática em múltiplas contas.",
+  "metrica": "30 stories gerados por semana com publicação automática diária",
+  "tecnologias": ["n8n", "OpenAI", "Placid", "Instagram (Graph API)", "Facebook (Graph API)", "Gmail", "AWS S3"],
+  "destaques": ["Geração de conteúdo com IA", "Design automático via Placid", "Aprovação por e-mail (human-in-the-loop)", "Publicação em múltiplas contas Instagram/Facebook", "Storage temporário em AWS S3"]
+}

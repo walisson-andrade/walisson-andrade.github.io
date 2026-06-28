@@ -1,0 +1,9 @@
+{
+  "titulo": "Sistema Completo de Faturação com Stripe (4 fluxos)",
+  "descricao": "Conjunto de 4 automações integradas para gestão de pagamentos via Stripe: geração de link de primeiro pagamento, criação de parcelas mensais, geração de sinais (depósitos) e atualização de status de pagamento.",
+  "problema": "A gestão de cobranças parceladas era feita manualmente — criar invoices, acompanhar pagamentos e atualizar status de cada aluno individualmente.",
+  "resultado": "Sistema automatizado end-to-end: desde a primeira cobrança até o tracking de todas as parcelas.",
+  "metrica": "Gestão de faturação 100% automatizada com 4 fluxos integrados",
+  "tecnologias": ["n8n", "Stripe"],
+  "destaques": ["4 workflows integrados (pagamento inicial, parcelas, sinais, tracking)", "Matching de curso com produto Stripe", "Geração e envio de invoices via API Stripe", "Atualização horária de status de pagamento", "Data table como fonte de verdade"]
+}

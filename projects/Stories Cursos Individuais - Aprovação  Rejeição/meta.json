@@ -1,0 +1,9 @@
+{
+  "titulo": "Stories de Cursos — Fluxo de Aprovação e Rejeição",
+  "descricao": "Recebe aprovação ou rejeição de stories de cursos via webhook. Na rejeição, regenera a imagem com dados atualizados via Placid e reenvia para aprovação por e-mail.",
+  "problema": "O processo de revisão e correção de stories era desorganizado, com trocas de mensagens manuais entre equipe de design e gestores.",
+  "resultado": "Fluxo estruturado de aprovação com regeneração automática em caso de rejeição.",
+  "metrica": "Ciclo de aprovação automatizado com regeneração instantânea",
+  "tecnologias": ["n8n", "Placid", "Gmail", "Google Drive"],
+  "destaques": ["Webhook de aprovação/rejeição", "Regeneração automática de imagens", "Upload de background via Google Drive para URL pública", "E-mail de aprovação com preview agrupado por unidade"]
+}

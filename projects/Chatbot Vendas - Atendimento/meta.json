@@ -1,0 +1,9 @@
+{
+  "titulo": "Chatbot de Vendas — Atendimento Multimodal com IA",
+  "descricao": "Chatbot completo de vendas consultivas via WhatsApp com suporte a texto, áudio, imagem e documentos. Usa Claude (Anthropic) como agente principal, Whisper para transcrição, GPT Vision para imagens e Gemini para documentos, com memória de conversa em PostgreSQL.",
+  "problema": "Atendimento de vendas por WhatsApp era 100% manual, lento e inconsistente. Mensagens de áudio e documentos não eram processados automaticamente.",
+  "resultado": "Atendimento automatizado 24/7 com compreensão multimodal e handoff para humano quando necessário.",
+  "metrica": "Atendimento automatizado com suporte a texto, áudio, imagem e documentos",
+  "tecnologias": ["n8n", "WhatsApp (Evolution API)", "Anthropic (Claude)", "OpenAI (GPT/Whisper)", "Google Gemini", "PostgreSQL", "Redis"],
+  "destaques": ["Agente de IA multimodal (Claude Sonnet)", "Transcrição de áudio com Whisper", "Análise de imagens com GPT Vision", "Parsing de documentos com Gemini", "Memória conversacional em PostgreSQL", "Buffer de mensagens com Redis", "Handoff para atendente humano via CRM"]
+}

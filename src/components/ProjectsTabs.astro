@@ -1,0 +1,166 @@
+---
+import { fullstackProjects } from "@/data/fullstack-projects";
+import { loadAutomations } from "@/lib/loadAutomations";
+import SectionHeading from "./SectionHeading.astro";
+import FullStackProjectCard from "./FullStackProjectCard.astro";
+import AutomationCard from "./AutomationCard.astro";
+import TechBadge from "./TechBadge.astro";
+
+const automations = loadAutomations();
+
+const tabs = [
+  { id: "automacoes", label: "Automações", count: automations.length },
+  { id: "fullstack", label: "Full Stack", count: fullstackProjects.length },
+  { id: "data", label: "Data & BI", count: 0 },
+] as const;
+---
+
+<section id="projetos" class="max-w-[1180px] mx-auto px-8 pt-14 pb-24">
+  <SectionHeading
+    tag="Projetos"
+    title="Construído para produção"
+    subtitle="Projetos reais em produção. Clientes não divulgados por contrato."
+  />
+
+  <div class="flex flex-wrap gap-3 mt-10" role="tablist">
+    {
+      tabs.map((tab, i) => (
+        <button
+          role="tab"
+          aria-selected={i === 0 ? "true" : "false"}
+          aria-controls={`panel-${tab.id}`}
+          data-tab={tab.id}
+          class:list={[
+            "tab-btn relative px-5 py-2.5 rounded-[10px] font-heading font-semibold text-sm transition-all duration-200 cursor-pointer",
+            "border outline-none",
+            i === 0
+              ? "bg-accent/10 border-accent/30 text-accent"
+              : "bg-surface border-border text-text-secondary hover:border-[#3A3A3A] hover:text-text",
+          ]}
+        >
+          {tab.label}
+          {tab.count > 0 && (
+            <span class="ml-2 font-mono text-[11px] opacity-60">
+              {tab.count}
+            </span>
+          )}
+        </button>
+      ))
+    }
+  </div>
+
+  <!-- Automações -->
+  <div
+    id="panel-automacoes"
+    role="tabpanel"
+    data-panel="automacoes"
+    class="tab-panel mt-8"
+  >
+    <div
+      class="flex items-center gap-2.5 px-3.5 py-[9px] mb-6 bg-[#151515] border border-[#262626] rounded-[10px] w-fit"
+    >
+      <span class="w-2 h-2 rounded-sm bg-accent"></span>
+      <span class="font-mono text-xs text-text-secondary">
+        Capturas ilustrativas. Fluxos reais sob acordo de confidencialidade
+      </span>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[22px]">
+      {automations.map((auto) => <AutomationCard automation={auto} />)}
+    </div>
+  </div>
+
+  <!-- Full Stack -->
+  <div
+    id="panel-fullstack"
+    role="tabpanel"
+    data-panel="fullstack"
+    class="tab-panel mt-8 hidden"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[22px]">
+      {
+        fullstackProjects.map((project) => (
+          <FullStackProjectCard project={project} />
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Data & BI -->
+  <div
+    id="panel-data"
+    role="tabpanel"
+    data-panel="data"
+    class="tab-panel mt-8 hidden"
+  >
+    <div
+      class="flex flex-col items-center justify-center py-20 text-center border border-dashed border-border rounded-[18px] bg-surface/50"
+    >
+      <div
+        class="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-5"
+      >
+        <svg
+          width="30"
+          height="30"
+          viewBox="0 0 26 26"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <rect x="4" y="14" width="4" height="8" rx="1"></rect>
+          <rect x="11" y="9" width="4" height="13" rx="1"></rect>
+          <rect x="18" y="5" width="4" height="17" rx="1"></rect>
+        </svg>
+      </div>
+      <h3 class="font-heading font-semibold text-xl text-[#F2F2F2] mb-2">
+        Projetos de Data & BI
+      </h3>
+      <p class="text-sm text-text-muted max-w-md leading-relaxed mb-6">
+        Dashboards, pipelines de dados e análises preditivas desenvolvidos na
+        Accenture e em projetos independentes.
+      </p>
+      <div class="flex flex-wrap gap-[7px] justify-center">
+        {
+          [
+            "Power BI",
+            "SQL Server",
+            "Python",
+            "Pentaho",
+            "PostgreSQL",
+            "GCP",
+          ].map((tech) => <TechBadge name={tech} size="sm" />)
+        }
+      </div>
+      <span
+        class="mt-6 font-mono text-xs text-text-dim tracking-wide uppercase"
+      >
+        Em breve
+      </span>
+    </div>
+  </div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".tab-btn");
+  const panels = document.querySelectorAll<HTMLElement>(".tab-panel");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const target = btn.dataset.tab;
+
+      buttons.forEach((b) => {
+        const isActive = b.dataset.tab === target;
+        b.setAttribute("aria-selected", String(isActive));
+        b.classList.toggle("bg-accent/10", isActive);
+        b.classList.toggle("border-accent/30", isActive);
+        b.classList.toggle("text-accent", isActive);
+        b.classList.toggle("bg-surface", !isActive);
+        b.classList.toggle("border-border", !isActive);
+        b.classList.toggle("text-text-secondary", !isActive);
+      });
+
+      panels.forEach((p) => {
+        p.classList.toggle("hidden", p.dataset.panel !== target);
+      });
+    });
+  });
+</script>

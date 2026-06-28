@@ -1,0 +1,9 @@
+{
+  "titulo": "Web Scraping e Extração Estruturada com IA",
+  "descricao": "Faz scraping de uma página de finanças, limpa o HTML, usa GPT-4o-mini para extrair fatos financeiros em formato estruturado (português) e salva para posterior embedding.",
+  "problema": "Conteúdo financeiro relevante para o chatbot estava disponível apenas como HTML bruto, sem estruturação para consumo por IA.",
+  "resultado": "Dados financeiros extraídos e normalizados automaticamente, prontos para ingestão na base de conhecimento.",
+  "metrica": "Extração contínua e estruturada de conteúdo financeiro",
+  "tecnologias": ["n8n", "OpenAI (GPT-4o-mini)"],
+  "destaques": ["Scraping com limpeza de HTML", "Extração estruturada com output parser", "Normalização para português", "Armazenamento em data table para pipeline de embeddings"]
+}

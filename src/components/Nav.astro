@@ -1,0 +1,94 @@
+---
+import { site } from "@/data/site";
+---
+
+<header
+  class="sticky top-0 z-60 backdrop-blur-xl bg-bg/72 border-b border-[#1C1C1C]"
+>
+  <div
+    class="max-w-[1180px] mx-auto px-8 py-[15px] flex items-center justify-between"
+  >
+    <a href="#top" class="flex items-center gap-2.5 no-underline">
+      <span class="w-[11px] h-[11px] rounded-[3px] bg-accent inline-block"
+      ></span>
+      <span
+        class="font-heading font-semibold text-base text-[#F5F5F4] tracking-tight"
+        >{site.name}</span
+      >
+    </a>
+
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden flex flex-col gap-1.5 p-2"
+      aria-label="Menu"
+    >
+      <span class="w-5 h-0.5 bg-text-secondary transition-all"></span>
+      <span class="w-5 h-0.5 bg-text-secondary transition-all"></span>
+      <span class="w-5 h-0.5 bg-text-secondary transition-all"></span>
+    </button>
+
+    <nav id="nav-links" class="hidden md:flex items-center gap-8">
+      <a
+        href="#skills"
+        class="no-underline text-text-secondary text-sm hover:text-white transition-colors"
+        >Skills</a
+      >
+      <a
+        href="#projetos"
+        class="no-underline text-text-secondary text-sm hover:text-white transition-colors"
+        >Projetos</a
+      >
+      <a
+        href="#experiencia"
+        class="no-underline text-text-secondary text-sm hover:text-white transition-colors"
+        >Experiência</a
+      >
+      <a
+        href="#contato"
+        class="no-underline inline-flex items-center px-[17px] py-[9px] rounded-[9px] bg-accent text-bg text-sm font-semibold hover:-translate-y-px hover:brightness-105 transition-all"
+        >Vamos conversar</a
+      >
+    </nav>
+  </div>
+
+  <nav
+    id="mobile-nav"
+    class="md:hidden hidden flex-col gap-4 px-8 pb-6 border-t border-[#1C1C1C]"
+  >
+    <a
+      href="#skills"
+      class="no-underline text-text-secondary text-sm hover:text-white transition-colors pt-4"
+      >Skills</a
+    >
+    <a
+      href="#projetos"
+      class="no-underline text-text-secondary text-sm hover:text-white transition-colors"
+      >Projetos</a
+    >
+    <a
+      href="#experiencia"
+      class="no-underline text-text-secondary text-sm hover:text-white transition-colors"
+      >Experiência</a
+    >
+    <a
+      href="#contato"
+      class="no-underline inline-flex items-center justify-center px-[17px] py-[9px] rounded-[9px] bg-accent text-bg text-sm font-semibold"
+      >Vamos conversar</a
+    >
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const nav = document.getElementById("mobile-nav");
+  btn?.addEventListener("click", () => {
+    nav?.classList.toggle("hidden");
+    nav?.classList.toggle("flex");
+  });
+  nav?.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => {
+      nav?.classList.add("hidden");
+      nav?.classList.remove("flex");
+    });
+  });
+</script>

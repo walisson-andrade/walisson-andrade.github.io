@@ -1,0 +1,9 @@
+{
+  "titulo": "Pipeline de Embeddings para Base de Conhecimento",
+  "descricao": "Processa conteúdo web scrapeado, gera embeddings via OpenAI e armazena em Supabase (pgvector) para busca semântica em chatbot.",
+  "problema": "O chatbot não tinha acesso estruturado ao conteúdo do site, resultando em respostas genéricas e imprecisas.",
+  "resultado": "Base vetorial alimentada com conteúdo real do site, habilitando busca semântica no chatbot.",
+  "metrica": "Base de conhecimento vetorial para RAG em chatbot",
+  "tecnologias": ["n8n", "OpenAI (Embeddings)", "Supabase (pgvector)"],
+  "destaques": ["Separação por tipo de conteúdo (card vs oferta)", "Text splitting otimizado por tokens", "Armazenamento vetorial em Supabase"]
+}

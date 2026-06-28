@@ -1,0 +1,9 @@
+{
+  "titulo": "Monitoramento Centralizado de Erros",
+  "descricao": "Captura erros de qualquer workflow vinculado e envia notificação no Slack com nome do fluxo, mensagem de erro e link da execução.",
+  "problema": "Erros em automações passavam despercebidos até que alguém notasse manualmente a falha.",
+  "resultado": "Alertas em tempo real no Slack para qualquer falha de automação.",
+  "metrica": "Tempo de detecção de erros reduzido para segundos",
+  "tecnologias": ["n8n", "Slack"],
+  "destaques": ["Error trigger centralizado", "Notificação com contexto completo (workflow, erro, link)", "Encaminhamento para webhook de consolidação"]
+}

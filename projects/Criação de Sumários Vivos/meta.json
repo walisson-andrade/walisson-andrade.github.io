@@ -1,0 +1,9 @@
+{
+  "titulo": "Sumários Inteligentes de Canais do Discord com IA",
+  "descricao": "Semanalmente, coleta mensagens de todos os canais do Discord, classifica relevância com IA e gera sumários fixados (pinned) atualizados automaticamente, com aprovação humana antes da publicação.",
+  "problema": "Canais do Discord acumulavam informações valiosas que se perdiam no histórico. Membros não conseguiam acompanhar o que era discutido sem ler tudo.",
+  "resultado": "Cada canal relevante passa a ter um sumário fixado, atualizado semanalmente e aprovado por moderador.",
+  "metrica": "Sumários automáticos semanais com classificação de relevância por IA",
+  "tecnologias": ["n8n", "Discord", "OpenAI (GPT-4.1 / GPT-5)"],
+  "destaques": ["Classificação de canais com IA (GPT-4.1)", "Geração de sumários com GPT-5", "Aprovação humana antes de publicar", "Sub-workflow de human-in-the-loop"]
+}

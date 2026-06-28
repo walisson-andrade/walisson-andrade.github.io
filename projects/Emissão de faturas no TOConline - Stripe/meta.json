@@ -1,0 +1,9 @@
+{
+  "titulo": "Emissão Automática de Faturas (Stripe → TOConline)",
+  "descricao": "A cada 2 horas, busca pagamentos concluídos no Stripe, cruza com o catálogo de serviços do TOConline por valor e taxa de IVA, emite faturas-recibo automaticamente e registra em Google Sheets.",
+  "problema": "A emissão de faturas após cada pagamento no Stripe era feita manualmente no sistema de faturação, causando atrasos e risco de não-conformidade fiscal.",
+  "resultado": "Faturas emitidas automaticamente em até 2 horas após o pagamento, com log completo.",
+  "metrica": "Faturação automática a cada 2 horas com matching por valor/IVA",
+  "tecnologias": ["n8n", "Stripe", "TOConline", "Google Sheets"],
+  "destaques": ["Matching automático de produto por valor e tier de IVA", "Emissão de faturas-recibo via API", "Log de auditoria em Google Sheets", "Execução periódica a cada 2 horas"]
+}

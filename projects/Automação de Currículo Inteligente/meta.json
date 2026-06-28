@@ -1,0 +1,9 @@
+{
+  "titulo": "Geração de Currículo Personalizado com IA",
+  "descricao": "Ao receber um e-mail com uma vaga, um agente de IA adapta o currículo-base ao perfil da vaga, gera um Google Doc formatado e converte em PDF no Google Drive.",
+  "problema": "Personalizar o currículo para cada candidatura era um processo manual demorado, reduzindo o volume de candidaturas enviadas.",
+  "resultado": "Currículo personalizado gerado automaticamente a cada nova vaga recebida por e-mail.",
+  "metrica": "Geração automática de CV em menos de 1 minuto por vaga",
+  "tecnologias": ["n8n", "Gmail", "Google Drive", "Google Docs", "Groq (LLM)"],
+  "destaques": ["Agente de IA com LLM (Groq)", "Trigger por e-mail", "Conversão automática para PDF"]
+}

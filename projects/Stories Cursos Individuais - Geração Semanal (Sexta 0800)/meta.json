@@ -1,0 +1,9 @@
+{
+  "titulo": "Stories de Cursos — Geração Semanal com Design Automático",
+  "descricao": "Toda sexta-feira, busca cursos da próxima semana, associa imagens de fundo, gera stories com banners dinâmicos (turma confirmada / vagas encerradas) via Placid e envia para aprovação por e-mail.",
+  "problema": "A equipe de marketing precisava criar manualmente dezenas de stories de cursos toda semana, com informações atualizadas de vagas e status.",
+  "resultado": "Stories gerados automaticamente com dados atualizados e design consistente, prontos para aprovação.",
+  "metrica": "Geração semanal automática de stories para todos os cursos",
+  "tecnologias": ["n8n", "Placid", "Google Drive", "Google Sheets", "Gmail"],
+  "destaques": ["Matching automático de curso com imagem de fundo", "Banners dinâmicos por status do curso", "Agrupamento por unidade no e-mail de aprovação", "Design via Placid com template configurável"]
+}

@@ -1,0 +1,22 @@
+---
+interface Props {
+  name: string;
+  size?: "sm" | "md";
+}
+
+const { name, size = "md" } = Astro.props;
+
+const sizeClasses = {
+  sm: "px-[9px] py-1 text-[11px] rounded-[6px]",
+  md: "px-2.5 py-[5px] text-[11.5px] rounded-[7px]",
+};
+---
+
+<span
+  class:list={[
+    "bg-[#1A1A1A] border border-[#2A2A2A] font-mono text-[#B0B0B0]",
+    sizeClasses[size],
+  ]}
+>
+  {name}
+</span>

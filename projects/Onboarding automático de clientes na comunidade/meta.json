@@ -1,0 +1,9 @@
+{
+  "titulo": "Onboarding Automático de Membros na Comunidade",
+  "descricao": "Monitora o canal de entradas do Discord a cada 15 minutos, extrai nome e e-mail de novos membros e aciona o fluxo de onboarding automaticamente.",
+  "problema": "Novos membros da comunidade não eram integrados rapidamente — o processo dependia de alguém monitorar o canal e iniciar o onboarding manualmente.",
+  "resultado": "Onboarding iniciado automaticamente em até 15 minutos após a entrada do novo membro.",
+  "metrica": "Onboarding automático a cada 15 minutos",
+  "tecnologias": ["n8n", "Discord"],
+  "destaques": ["Polling a cada 15 minutos", "Extração de nome e e-mail de embeds do Discord", "Alerta automático em caso de falha na extração"]
+}

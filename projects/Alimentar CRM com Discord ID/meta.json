@@ -1,0 +1,9 @@
+{
+  "titulo": "Sincronização de Discord ID com CRM",
+  "descricao": "Lê uma base de contatos em Google Sheets, identifica membros com Discord ID e atualiza automaticamente o CRM via sub-workflow.",
+  "problema": "A associação entre perfis do Discord e registros do CRM era feita manualmente, causando atrasos e inconsistências nos dados de membros da comunidade.",
+  "resultado": "Sincronização automática e periódica, garantindo que todos os membros com Discord ID estejam corretamente vinculados no CRM.",
+  "metrica": "Eliminação de atualizações manuais recorrentes",
+  "tecnologias": ["n8n", "Google Sheets", "Discord"],
+  "destaques": ["Execução agendada", "Filtro inteligente de registros", "Sub-workflow modular para inserção no CRM"]
+}

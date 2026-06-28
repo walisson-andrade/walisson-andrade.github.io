@@ -1,0 +1,9 @@
+{
+  "titulo": "Newsletter Mensal Automática com IA",
+  "descricao": "No último dia útil do mês, coleta mensagens de canais do Discord, resume com IA e gera uma newsletter formatada em português, com aprovação humana antes do envio.",
+  "problema": "A criação da newsletter mensal exigia leitura manual de todos os canais, compilação e formatação — processo que levava horas.",
+  "resultado": "Newsletter gerada automaticamente com resumo inteligente, pronta para aprovação em minutos.",
+  "metrica": "Geração automática mensal com aprovação humana",
+  "tecnologias": ["n8n", "Discord", "OpenAI (GPT)"],
+  "destaques": ["Detecção automática do último dia útil do mês", "Sumarização com IA", "Fluxo de aprovação humana (human-in-the-loop)"]
+}
