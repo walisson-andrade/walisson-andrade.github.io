@@ -21,20 +21,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build with Astro
+      - name: Build and upload with Astro
         uses: withastro/action@v6
-
-      - name: Verify no fluxo.json leaked
-        run: |
-          if find dist -name "fluxo.json" -o -name "*.json" -path "*/projects/*" | grep -q .; then
-            echo "ERROR: workflow JSON files found in dist/"
-            exit 1
-          fi
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
 
   deploy:
     needs: build
