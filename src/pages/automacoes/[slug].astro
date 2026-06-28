@@ -1,20 +1,22 @@
 ---
 import { Image } from "astro:assets";
-import type { GetStaticPaths } from "astro";
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { loadAutomations } from "@/lib/loadAutomations";
 import TechBadge from "@/components/TechBadge.astro";
 import { site } from "@/data/site";
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths = (() => {
   const automations = loadAutomations();
   return automations.map((auto) => ({
     params: { slug: auto.slug },
     props: { automation: auto },
   }));
-};
+}) satisfies GetStaticPaths;
 
-const { automation } = Astro.props;
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { automation } = Astro.props as Props;
 ---
 
 <BaseLayout
