@@ -1,0 +1,8 @@
+{
+  "titulo": "Course Stories — Approval and Rejection Flow",
+  "descricao": "Receives course story approval or rejection via webhook. On rejection, regenerates the image with updated data via Placid and resends it for approval by email.",
+  "problema": "The story review and correction process was disorganized, with manual back-and-forth between the design team and managers.",
+  "resultado": "A structured approval flow with automatic regeneration on rejection.",
+  "metrica": "Automated approval cycle with instant regeneration",
+  "destaques": ["Approval/rejection webhook", "Automatic image regeneration", "Background upload via Google Drive to a public URL", "Approval email with preview grouped by unit"]
+}

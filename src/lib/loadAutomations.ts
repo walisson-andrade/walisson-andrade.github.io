@@ -1,4 +1,5 @@
 import type { Automation } from "./types";
+import type { Lang } from "@/i18n/ui";
 
 interface AutomationMeta {
   titulo: string;
@@ -9,6 +10,10 @@ interface AutomationMeta {
   tecnologias: string[];
   destaques: string[];
 }
+
+type AutomationMetaOverride = Partial<
+  Omit<AutomationMeta, "tecnologias">
+>;
 
 const REQUIRED_FIELDS: (keyof AutomationMeta)[] = [
   "titulo",
@@ -49,11 +54,21 @@ function validate(meta: unknown, folder: string): meta is AutomationMeta {
   return true;
 }
 
-export function loadAutomations(): Automation[] {
+export function loadAutomations(lang: Lang = "pt"): Automation[] {
   const metaFiles = import.meta.glob<AutomationMeta>(
     "../../projects/*/meta.json",
     { eager: true, import: "default" },
   );
+
+  const metaOverrideFiles = import.meta.glob<AutomationMetaOverride>(
+    "../../projects/*/meta.en.json",
+    { eager: true, import: "default" },
+  );
+
+  const overridesByFolder = new Map<string, AutomationMetaOverride>();
+  for (const [path, override] of Object.entries(metaOverrideFiles)) {
+    overridesByFolder.set(extractFolder(path), override);
+  }
 
   const printFiles = import.meta.glob<{ default: ImageMetadata }>(
     "../../projects/*/*.{png,jpg,jpeg,webp}",
@@ -74,16 +89,17 @@ export function loadAutomations(): Automation[] {
   for (const [path, meta] of Object.entries(metaFiles)) {
     const folder = extractFolder(path);
     validate(meta, folder);
+    const override = lang === "en" ? overridesByFolder.get(folder) : undefined;
 
     automations.push({
       slug: slugify(folder),
-      titulo: meta.titulo,
-      descricao: meta.descricao,
-      problema: meta.problema,
-      resultado: meta.resultado,
-      metrica: meta.metrica,
+      titulo: override?.titulo ?? meta.titulo,
+      descricao: override?.descricao ?? meta.descricao,
+      problema: override?.problema ?? meta.problema,
+      resultado: override?.resultado ?? meta.resultado,
+      metrica: override?.metrica ?? meta.metrica,
       tecnologias: meta.tecnologias,
-      destaques: meta.destaques,
+      destaques: override?.destaques ?? meta.destaques,
       prints: printsByFolder.get(folder) ?? [],
     });
   }

@@ -1,13 +1,23 @@
 ---
-import { experiences } from "@/data/experience";
+import { getExperiences } from "@/data/experience";
+import type { Lang } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
 import SectionHeading from "./SectionHeading.astro";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pt" } = Astro.props;
+const experiences = getExperiences(lang);
+const t = useTranslations(lang);
 ---
 
 <section id="experiencia" class="max-w-[1180px] mx-auto px-8 py-24">
-  <SectionHeading tag="Trajetória" title="Experiência" />
+  <SectionHeading tag={t("experience.tag")} title={t("experience.title")} />
 
   <div class="relative mt-12 max-w-[760px]">
-    <div class="absolute left-[6px] top-[6px] bottom-[30px] w-px bg-[#272727]">
+    <div class="absolute left-[6px] top-[6px] bottom-[30px] w-[3px] bg-ink">
     </div>
 
     {
@@ -15,23 +25,23 @@ import SectionHeading from "./SectionHeading.astro";
         <div class="relative pl-[38px] pb-[38px] last:pb-0">
           <div
             class:list={[
-              "absolute left-0 top-1 w-[13px] h-[13px] rounded-full",
+              "absolute left-0 top-1 w-[15px] h-[15px] rounded-full border-2 border-ink",
               exp.isCurrent
-                ? "bg-accent shadow-[0_0_0_4px_#0F0F0F,0_0_12px_rgba(255,109,66,0.6)]"
-                : "bg-[#2A2A2A] border border-[#3A3A3A] shadow-[0_0_0_4px_#0F0F0F]",
+                ? "bg-accent"
+                : "bg-surface",
             ]}
           />
           <div
             class:list={[
-              "font-mono text-[13px] mb-[7px]",
-              exp.isCurrent ? "text-accent" : "text-text-secondary",
+              "font-mono text-[13px] font-bold mb-[7px] inline-block px-2 py-0.5 rounded-[4px] border-2 border-ink",
+              exp.isCurrent ? "bg-accent text-on-accent" : "bg-surface text-text-secondary",
             ]}
           >
             {exp.period}
           </div>
-          <div class="font-heading font-semibold text-[21px] text-[#F2F2F2]">
+          <div class="font-heading font-semibold text-[21px] text-ink">
             {exp.company}{" "}
-            <span class="font-normal text-base text-[#888]">· {exp.role}</span>
+            <span class="font-normal text-base text-text-muted">· {exp.role}</span>
           </div>
           <p class="text-[14.5px] leading-relaxed text-text-secondary mt-[9px] max-w-[560px]">
             {exp.description}

@@ -1,0 +1,165 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { Automation } from "@/lib/types";
+import type { Lang } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
+import { getSite } from "@/data/site";
+import TechBadge from "@/components/TechBadge.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import LanguageSwitcher from "@/components/LanguageSwitcher.astro";
+
+interface Props {
+  automation: Automation;
+  lang?: Lang;
+}
+
+const { automation, lang = "pt" } = Astro.props;
+const t = useTranslations(lang);
+const site = getSite(lang);
+const homeHref = `/${lang}`;
+const projectsHref = `/${lang}#projetos`;
+const currentPath = `/automacoes/${automation.slug}`;
+---
+
+<BaseLayout
+  lang={lang}
+  title={`${automation.titulo} | ${site.name}`}
+  description={automation.descricao}
+>
+  <header
+    class="sticky top-0 z-60 backdrop-blur-xl bg-bg/90 border-b-2 border-ink"
+  >
+    <div
+      class="max-w-[1180px] mx-auto px-8 py-[15px] flex items-center justify-between"
+    >
+      <a href={homeHref} class="flex items-center gap-2.5 no-underline">
+        <span class="w-[13px] h-[13px] rounded-[3px] bg-accent border-2 border-ink inline-block"
+        ></span>
+        <span
+          class="font-heading font-bold text-base text-ink tracking-tight"
+          >{site.name}</span
+        >
+      </a>
+      <div class="flex items-center gap-5">
+        <a
+          href={projectsHref}
+          class="no-underline inline-flex items-center gap-2 text-text-secondary text-sm font-medium hover:text-ink transition-colors"
+        >
+          <span>←</span> {t("nav.back")}
+        </a>
+        <LanguageSwitcher lang={lang} path={currentPath} />
+        <ThemeToggle />
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-[860px] mx-auto px-8 pt-16 pb-24">
+    <div class="mb-10">
+      <span
+        class="inline-flex items-center gap-2 px-3 py-1.5 bg-accent border-2 border-ink rounded-[6px] font-mono text-[11px] font-bold text-on-accent mb-5 -rotate-1"
+      >
+        <span class="w-1.5 h-1.5 rounded-full bg-ink"></span>
+        {t("automation.badge")}
+      </span>
+      <h1
+        class="font-heading font-semibold text-[clamp(28px,5vw,40px)] leading-[1.1] tracking-tight text-ink"
+      >
+        {automation.titulo}
+      </h1>
+      <p class="text-lg text-text-muted mt-4 leading-relaxed max-w-[700px]">
+        {automation.descricao}
+      </p>
+    </div>
+
+    {
+      automation.prints.length > 0 && (
+        <div class="flex flex-col gap-4 mb-12">
+          {automation.prints.map((print, i) => (
+            <div class="rounded-[14px] overflow-hidden border-2 border-ink bg-surface hard-shadow-sm">
+              <Image
+                src={print}
+                alt={`${automation.titulo} — ${i + 1}`}
+                class="w-full h-auto"
+                widths={[600, 900]}
+                sizes="(max-width: 860px) 100vw, 860px"
+              />
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+      <div class="p-6 bg-surface border-2 border-ink rounded-[14px] hard-shadow-sm">
+        <span
+          class="font-mono text-[11px] tracking-[0.1em] uppercase text-on-accent font-bold bg-accent px-2 py-0.5 rounded-[4px]"
+        >
+          {t("automation.problem")}
+        </span>
+        <p class="text-[15px] text-text-secondary leading-relaxed mt-2">
+          {automation.problema}
+        </p>
+      </div>
+      <div class="p-6 bg-surface border-2 border-ink rounded-[14px] hard-shadow-sm">
+        <span
+          class="font-mono text-[11px] tracking-[0.1em] uppercase text-on-accent font-bold bg-accent px-2 py-0.5 rounded-[4px]"
+        >
+          {t("automation.result")}
+        </span>
+        <p class="text-[15px] text-text-secondary leading-relaxed mt-2">
+          {automation.resultado}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="p-6 bg-surface-alt border-2 border-ink border-l-[5px] border-l-accent-gold rounded-[14px] mb-12"
+    >
+      <span
+        class="font-mono text-[11px] tracking-[0.1em] uppercase text-ink font-bold"
+      >
+        {t("automation.impact")}
+      </span>
+      <p
+        class="font-heading font-semibold text-xl text-ink mt-2 leading-snug"
+      >
+        {automation.metrica}
+      </p>
+    </div>
+
+    {
+      automation.destaques.length > 0 && (
+        <div class="mb-12">
+          <h2 class="font-heading font-semibold text-lg text-ink mb-4">
+            {t("automation.highlights")}
+          </h2>
+          <ul class="flex flex-col gap-2.5">
+            {automation.destaques.map((d) => (
+              <li class="flex items-start gap-3 text-[15px] text-text-secondary leading-relaxed">
+                <span class="text-accent-gold mt-0.5 shrink-0">↗</span>
+                {d}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
+    <div>
+      <h2 class="font-heading font-semibold text-lg text-ink mb-4">
+        {t("automation.tech")}
+      </h2>
+      <div class="flex flex-wrap gap-2">
+        {automation.tecnologias.map((tech) => <TechBadge name={tech} />)}
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t-2 border-ink">
+      <div class="flex items-center gap-2 font-mono text-xs text-text-dim">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent-gold"></span>
+        {t("automation.confidentiality")}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

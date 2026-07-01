@@ -1,0 +1,8 @@
+{
+  "titulo": "Automatic Monthly Newsletter with AI",
+  "descricao": "On the last business day of the month, collects messages from Discord channels, summarizes them with AI and generates a formatted newsletter, with human approval before sending.",
+  "problema": "Building the monthly newsletter required manually reading every channel, compiling and formatting — a process that took hours.",
+  "resultado": "Newsletter generated automatically with a smart summary, ready for approval within minutes.",
+  "metrica": "Automatic monthly generation with human approval",
+  "destaques": ["Automatic detection of the month's last business day", "AI summarization", "Human-in-the-loop approval flow"]
+}

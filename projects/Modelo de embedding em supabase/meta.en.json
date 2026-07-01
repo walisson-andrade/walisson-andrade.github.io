@@ -1,0 +1,8 @@
+{
+  "titulo": "Knowledge Base Embedding Pipeline",
+  "descricao": "Processes scraped web content, generates embeddings via OpenAI and stores them in Supabase (pgvector) for semantic search in a chatbot.",
+  "problema": "The chatbot had no structured access to the website's content, resulting in generic and imprecise answers.",
+  "resultado": "A vector database populated with real site content, enabling semantic search in the chatbot.",
+  "metrica": "Vector knowledge base for chatbot RAG",
+  "destaques": ["Separation by content type (card vs. offer)", "Token-optimized text splitting", "Vector storage in Supabase"]
+}

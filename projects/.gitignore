@@ -1,2 +1,3 @@
 *.json
 !meta.json
+!meta.en.json

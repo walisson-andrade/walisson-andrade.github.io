@@ -1,0 +1,8 @@
+{
+  "titulo": "Course Stories — Weekly Generation with Automatic Design",
+  "descricao": "Every Friday, fetches next week's courses, matches background images, generates stories with dynamic banners (confirmed class / seats closed) via Placid and sends them for approval by email.",
+  "problema": "The marketing team had to manually create dozens of course stories every week, with up-to-date seat and status information.",
+  "resultado": "Stories generated automatically with up-to-date data and consistent design, ready for approval.",
+  "metrica": "Automatic weekly story generation for every course",
+  "destaques": ["Automatic matching of course to background image", "Dynamic banners by course status", "Grouped by unit in the approval email", "Design via Placid with a configurable template"]
+}

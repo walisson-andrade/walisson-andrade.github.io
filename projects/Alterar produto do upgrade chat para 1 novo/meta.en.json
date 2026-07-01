@@ -1,0 +1,8 @@
+{
+  "titulo": "Automatic Stripe Subscription Migration",
+  "descricao": "Identifies Stripe subscriptions nearing renewal, cancels the old plan, creates the new one with updated pricing, and assigns the correct Discord role.",
+  "problema": "Changing subscription plans required manual work per customer — cancelling the old one, creating the new one in Stripe and updating Discord permissions.",
+  "resultado": "A fully automated process running daily, with zero human intervention.",
+  "metrica": "Automatic subscription migration with zero manual intervention",
+  "destaques": ["Batch processing (splitInBatches)", "Conditional logic by price tier", "Automatic Discord role assignment"]
+}

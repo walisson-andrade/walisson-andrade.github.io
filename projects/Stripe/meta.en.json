@@ -1,0 +1,8 @@
+{
+  "titulo": "Complete Stripe Billing System (4 flows)",
+  "descricao": "A set of 4 integrated automations for Stripe payment management: first-payment link generation, monthly installment creation, deposit (signal) generation, and payment status updates.",
+  "problema": "Managing installment billing was done manually — creating invoices, tracking payments and updating each student's status individually.",
+  "resultado": "An end-to-end automated system: from the first charge to tracking every installment.",
+  "metrica": "100% automated billing management with 4 integrated flows",
+  "destaques": ["4 integrated workflows (initial payment, installments, deposits, tracking)", "Matching courses to Stripe products", "Invoice generation and delivery via Stripe API", "Hourly payment status updates", "Data table as the single source of truth"]
+}

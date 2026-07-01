@@ -1,0 +1,8 @@
+{
+  "titulo": "AI-Powered Personalized Resume Generation",
+  "descricao": "When a job posting email arrives, an AI agent tailors the base resume to the role, generates a formatted Google Doc and converts it to PDF in Google Drive.",
+  "problema": "Tailoring the resume for each application was a slow manual process, reducing the volume of applications sent.",
+  "resultado": "A personalized resume is generated automatically for every new job posting received by email.",
+  "metrica": "Automatic resume generation in under 1 minute per posting",
+  "destaques": ["AI agent with LLM (Groq)", "Email trigger", "Automatic PDF conversion"]
+}

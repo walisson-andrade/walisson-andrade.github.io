@@ -11,18 +11,21 @@ import "@fontsource/jetbrains-mono/500.css";
 import "@/styles/global.css";
 
 import { site } from "@/data/site";
+import type { Lang } from "@/i18n/ui";
 import FloatingButtons from "@/components/FloatingButtons.astro";
 
 interface Props {
   title?: string;
   description?: string;
+  lang?: Lang;
 }
 
-const { title = site.name, description = site.subtitle } = Astro.props;
+const { title = site.name, description = site.subtitle, lang = "pt" } = Astro.props;
+const htmlLang = lang === "pt" ? "pt-BR" : "en";
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,6 +45,18 @@ const { title = site.name, description = site.subtitle } = Astro.props;
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <script is:inline>
+      (function () {
+        var stored = localStorage.getItem("theme");
+        var theme =
+          stored === "light" || stored === "dark"
+            ? stored
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      })();
+    </script>
   </head>
   <body
     class="bg-bg text-text font-body antialiased overflow-x-hidden min-h-screen"

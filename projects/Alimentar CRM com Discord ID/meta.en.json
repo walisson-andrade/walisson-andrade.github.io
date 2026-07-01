@@ -1,0 +1,8 @@
+{
+  "titulo": "Discord ID Sync with CRM",
+  "descricao": "Reads a contact base in Google Sheets, identifies members with a Discord ID and automatically updates the CRM via a sub-workflow.",
+  "problema": "Matching Discord profiles to CRM records was done manually, causing delays and inconsistencies in community member data.",
+  "resultado": "Automatic, periodic sync ensuring every member with a Discord ID is correctly linked in the CRM.",
+  "metrica": "Elimination of recurring manual updates",
+  "destaques": ["Scheduled execution", "Smart record filtering", "Modular sub-workflow for CRM insertion"]
+}

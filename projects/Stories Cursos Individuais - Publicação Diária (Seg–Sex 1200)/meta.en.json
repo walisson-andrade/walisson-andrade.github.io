@@ -1,0 +1,8 @@
+{
+  "titulo": "Course Stories — Automatic Daily Publishing",
+  "descricao": "Monday through Friday, publishes approved course stories to the corresponding unit's Instagram and Facebook, with temporary upload to AWS S3.",
+  "problema": "Daily story publishing across multiple social media accounts was done manually, consuming the marketing team's time.",
+  "resultado": "Automatic publishing at set times, across multiple Instagram and Facebook accounts.",
+  "metrica": "Automatic daily publishing across multiple social accounts",
+  "destaques": ["Publishing to multiple accounts per unit", "Temporary S3 storage with automatic cleanup", "Filtering by scheduled publish date"]
+}

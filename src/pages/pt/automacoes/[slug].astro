@@ -1,0 +1,19 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+import { loadAutomations } from "@/lib/loadAutomations";
+import AutomationDetail from "@/components/AutomationDetail.astro";
+
+export const getStaticPaths = (() => {
+  const automations = loadAutomations("pt");
+  return automations.map((auto) => ({
+    params: { slug: auto.slug },
+    props: { automation: auto },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { automation } = Astro.props as Props;
+---
+
+<AutomationDetail automation={automation} lang="pt" />

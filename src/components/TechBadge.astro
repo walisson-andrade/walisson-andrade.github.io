@@ -1,22 +1,26 @@
 ---
+import { getTechIconSvg } from "@/lib/techIcons";
+
 interface Props {
   name: string;
   size?: "sm" | "md";
 }
 
 const { name, size = "md" } = Astro.props;
+const icon = getTechIconSvg(name);
 
 const sizeClasses = {
-  sm: "px-[9px] py-1 text-[11px] rounded-[6px]",
-  md: "px-2.5 py-[5px] text-[11.5px] rounded-[7px]",
+  sm: "px-[9px] py-1 text-[11px] rounded-[5px] gap-[5px]",
+  md: "px-2.5 py-[5px] text-[11.5px] rounded-[6px] gap-1.5",
 };
 ---
 
 <span
   class:list={[
-    "bg-[#1A1A1A] border border-[#2A2A2A] font-mono text-[#B0B0B0]",
+    "inline-flex items-center bg-surface border-2 border-ink font-mono text-ink",
     sizeClasses[size],
   ]}
 >
+  {icon && <span class="shrink-0 leading-none" set:html={icon} />}
   {name}
 </span>

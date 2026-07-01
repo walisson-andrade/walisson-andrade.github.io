@@ -1,0 +1,8 @@
+{
+  "titulo": "Automatic Community Member Onboarding",
+  "descricao": "Monitors the Discord welcome channel every 15 minutes, extracts name and email from new members, and automatically triggers the onboarding flow.",
+  "problema": "New community members weren't onboarded quickly — the process relied on someone monitoring the channel and starting onboarding manually.",
+  "resultado": "Onboarding starts automatically within 15 minutes of a new member joining.",
+  "metrica": "Automatic onboarding every 15 minutes",
+  "destaques": ["Polling every 15 minutes", "Extracting name and email from Discord embeds", "Automatic alert on extraction failure"]
+}

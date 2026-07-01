@@ -10,12 +10,12 @@ const { tag, title, subtitle } = Astro.props;
 
 <div>
   <span
-    class="font-mono text-[12.5px] tracking-[0.14em] uppercase text-accent"
+    class="inline-block font-mono text-[12px] tracking-[0.14em] uppercase text-on-accent bg-accent border-2 border-ink px-2.5 py-1 rounded-[5px] -rotate-1"
   >
-    // {tag}
+    {tag}
   </span>
   <h2
-    class="font-display font-medium text-[clamp(32px,5vw,44px)] leading-[1.08] tracking-[-0.005em] text-[#F5F5F4] mt-3.5"
+    class="font-display font-semibold text-[clamp(32px,5vw,46px)] leading-[1.05] tracking-[-0.01em] text-ink mt-4"
   >
     {title}
   </h2>

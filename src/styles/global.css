@@ -1,19 +1,29 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme {
-  --color-bg: #0F0E0D;
-  --color-surface: #161311;
-  --color-surface-alt: #191614;
-  --color-border: #2A2521;
-  --color-border-hover: #3A322B;
-  --color-text: #F1EDE8;
-  --color-text-secondary: #A79D91;
-  --color-text-muted: #8D8378;
-  --color-text-dim: #5C5449;
+  /* warm paper base — the "canvas" this whole thing is printed on */
+  --color-bg: #F0E9D8;
+  --color-surface: #FBF7EC;
+  --color-surface-alt: #E7DEC7;
+  --color-ink: #15130E;
+  --color-border: #15130E;
+  --color-border-hover: #15130E;
+  --color-text: #15130E;
+  --color-text-secondary: #4A4536;
+  --color-text-muted: #66604D;
+  --color-text-dim: #8A8367;
   --color-accent: #FF6D42;
+  --color-accent-ink: #15130E;
   --color-accent-gold: #E8A23D;
-  --color-accent-blue: #3B82F6;
-  --color-success: #37C871;
+  --color-accent-blue: #2E5BFF;
+  --color-success: #1E8A4C;
+  --color-on-accent: #15130E;
+  --color-shadow: #15130E;
+  --glow-1: rgba(255, 109, 66, 0.35);
+  --glow-2: rgba(232, 162, 61, 0.14);
+  --glow-blob-opacity: 0.5;
 
   --font-display: "Fraunces Variable", "Fraunces", serif;
   --font-heading: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
@@ -21,21 +31,61 @@
   --font-mono: "JetBrains Mono", monospace;
 }
 
+/* dark mode: same neo-brutalist system, ink/paper roles flip, accent stays fixed */
+.dark {
+  --color-bg: #131110;
+  --color-surface: #1C1914;
+  --color-surface-alt: #24201A;
+  --color-ink: #F3EEDD;
+  --color-border: #F3EEDD;
+  --color-border-hover: #F3EEDD;
+  --color-text: #F3EEDD;
+  --color-text-secondary: #B8AF9A;
+  --color-text-muted: #948C74;
+  --color-text-dim: #6D6552;
+  --color-shadow: #4B4636;
+  --glow-1: rgba(255, 109, 66, 0.11);
+  --glow-2: rgba(232, 162, 61, 0.08);
+  --glow-blob-opacity: 0.16;
+}
+
 body {
   background-color: var(--color-bg);
   background-image:
-    radial-gradient(ellipse 900px 500px at 12% -10%, rgba(255, 109, 66, 0.14), transparent 60%),
-    radial-gradient(ellipse 700px 500px at 100% 15%, rgba(232, 162, 61, 0.08), transparent 55%),
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: auto, auto, 64px 64px, 64px 64px;
-  background-position: top, top, -1px -1px, -1px -1px;
+    radial-gradient(circle, color-mix(in srgb, var(--color-ink) 16%, transparent) 1.6px, transparent 1.6px),
+    radial-gradient(ellipse 1000px 560px at 88% -8%, var(--glow-1), transparent 60%),
+    radial-gradient(ellipse 700px 460px at -6% 30%, var(--glow-2), transparent 55%);
+  background-size: 22px 22px, auto, auto;
+  background-position: -1px -1px, top, top;
   background-attachment: fixed;
+  transition: background-color 200ms ease;
 }
 
 ::selection {
-  background: rgba(255, 109, 66, 0.32);
-  color: #fff;
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.hard-shadow {
+  box-shadow: 7px 7px 0 0 var(--color-shadow);
+}
+
+.hard-shadow-sm {
+  box-shadow: 4px 4px 0 0 var(--color-shadow);
+}
+
+.press-hover {
+  transition: transform 180ms cubic-bezier(.2,.7,.2,1), box-shadow 180ms cubic-bezier(.2,.7,.2,1);
+}
+
+.press-hover:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 11px 11px 0 0 var(--color-shadow);
+}
+
+.press-hover-sm:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 0 var(--color-shadow);
 }
 
 @keyframes pulse-dot {
@@ -44,8 +94,8 @@ body {
 }
 
 @keyframes float-glow {
-  0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, -18px); }
+  0%, 100% { transform: translate(-50%, 0) rotate(-2deg); }
+  50% { transform: translate(-50%, -18px) rotate(2deg); }
 }
 
 @keyframes reveal {
@@ -56,4 +106,9 @@ body {
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }

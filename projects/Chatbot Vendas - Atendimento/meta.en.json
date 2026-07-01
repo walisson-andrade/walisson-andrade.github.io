@@ -1,0 +1,8 @@
+{
+  "titulo": "Sales Chatbot — Multimodal AI Support",
+  "descricao": "A full consultative sales chatbot over WhatsApp supporting text, audio, images and documents. Uses Claude (Anthropic) as the main agent, Whisper for transcription, GPT Vision for images and Gemini for documents, with conversation memory in PostgreSQL.",
+  "problema": "WhatsApp sales support was 100% manual, slow and inconsistent. Audio messages and documents weren't processed automatically.",
+  "resultado": "24/7 automated support with multimodal understanding and handoff to a human when needed.",
+  "metrica": "Automated support with text, audio, image and document handling",
+  "destaques": ["Multimodal AI agent (Claude Sonnet)", "Audio transcription with Whisper", "Image analysis with GPT Vision", "Document parsing with Gemini", "Conversational memory in PostgreSQL", "Message buffering with Redis", "Handoff to a human agent via CRM"]
+}

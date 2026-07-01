@@ -1,0 +1,8 @@
+{
+  "titulo": "SMS Notifications to Leads for New Courses",
+  "descricao": "Cross-references Supabase leads with enrolled students and sends a personalized SMS announcing new course openings.",
+  "problema": "Qualified leads weren't notified about new courses in time, resulting in lost potential enrollments.",
+  "resultado": "Relevant leads now receive automated SMS notifications as soon as new courses open.",
+  "metrica": "Automatic lead activation via SMS",
+  "destaques": ["Cross-referencing leads and students", "Batch sending with volume control", "Reusable sub-workflow"]
+}

@@ -1,7 +1,9 @@
 ---
-import { fullstackProjects } from "@/data/fullstack-projects";
+import { getFullstackProjects } from "@/data/fullstack-projects";
 import SectionHeading from "./SectionHeading.astro";
 import FullStackProjectCard from "./FullStackProjectCard.astro";
+
+const fullstackProjects = getFullstackProjects("pt");
 ---
 
 <section id="projetos" class="max-w-[1180px] mx-auto px-8 pt-14 pb-24">

@@ -1,32 +1,42 @@
 ---
-import { site } from "@/data/site";
+import { getSite } from "@/data/site";
+import type { Lang } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pt" } = Astro.props;
+const site = getSite(lang);
+const t = useTranslations(lang);
 ---
 
-<section id="contato" class="relative overflow-hidden border-t border-[#1E1E1E]">
+<section id="contato" class="relative overflow-hidden border-t-2 border-ink">
   <div
-    class="absolute -bottom-[200px] left-1/2 -translate-x-1/2 w-[680px] h-[420px] pointer-events-none"
-    style="background: radial-gradient(ellipse at center, rgba(255,109,66,0.16), transparent 68%); filter: blur(34px);"
+    class="absolute -bottom-[220px] left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full pointer-events-none"
+    style="background: var(--color-accent); opacity: var(--glow-blob-opacity); filter: blur(80px);"
   >
   </div>
 
   <div class="max-w-[760px] mx-auto px-8 py-26 text-center relative">
     <span
-      class="font-mono text-[12.5px] tracking-[0.14em] uppercase text-accent"
+      class="inline-block font-mono text-[12px] tracking-[0.14em] uppercase text-on-accent bg-accent border-2 border-ink px-2.5 py-1 rounded-[5px] rotate-1"
     >
-      // Vamos construir
+      {t("cta.tag")}
     </span>
     <h2
-      class="font-display font-medium text-[clamp(32px,5vw,48px)] leading-[1.12] tracking-[-0.005em] text-[#F6F6F4] mt-[18px]"
+      class="font-display font-semibold text-[clamp(32px,5vw,50px)] leading-[1.1] tracking-[-0.01em] text-ink mt-5"
     >
-      {site.cta} <span class="italic text-accent">Vamos conversar.</span>
+      {site.cta} <span class="italic bg-accent text-on-accent px-2 rotate-[-1deg] inline-block">{t("cta.highlight")}</span>
     </h2>
 
-    <div class="flex items-center justify-center gap-3.5 mt-9 flex-wrap">
+    <div class="flex items-center justify-center gap-4 mt-10 flex-wrap">
       <a
         href={site.linkedin}
         target="_blank"
         rel="noopener"
-        class="no-underline inline-flex items-center gap-[9px] px-[26px] py-[15px] rounded-[11px] bg-accent text-bg text-[15px] font-semibold hover:-translate-y-0.5 hover:brightness-105 transition-all"
+        class="press-hover no-underline inline-flex items-center gap-[9px] px-[26px] py-[15px] rounded-[8px] bg-ink text-accent border-2 border-ink text-[15px] font-heading font-bold hard-shadow-sm dark:bg-accent dark:text-on-accent dark:border-accent"
       >
         LinkedIn <span class="text-base">→</span>
       </a>
@@ -34,13 +44,13 @@ import { site } from "@/data/site";
         href={site.whatsappLink}
         target="_blank"
         rel="noopener"
-        class="no-underline inline-flex items-center gap-[9px] px-[26px] py-[15px] rounded-[11px] bg-transparent border border-border-hover text-[#E4E4E4] text-[15px] font-medium hover:border-[#4A4A4A] hover:bg-[#161616] transition-all"
+        class="press-hover no-underline inline-flex items-center gap-[9px] px-[26px] py-[15px] rounded-[8px] bg-surface border-2 border-ink text-ink text-[15px] font-heading font-bold hard-shadow-sm"
       >
         WhatsApp <span class="font-mono text-sm text-text-secondary">{site.whatsapp}</span>
       </a>
     </div>
 
-    <p class="mt-6 font-mono text-sm text-text-secondary">
+    <p class="mt-7 font-mono text-sm text-text-secondary">
       {site.email}
     </p>
   </div>

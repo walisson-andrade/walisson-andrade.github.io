@@ -1,0 +1,8 @@
+{
+  "titulo": "AI-Powered Smart Discord Channel Summaries",
+  "descricao": "Weekly, collects messages from every Discord channel, ranks relevance with AI and generates pinned summaries updated automatically, with human approval before publishing.",
+  "problema": "Discord channels accumulated valuable information that got lost in the history. Members couldn't keep up without reading everything.",
+  "resultado": "Every relevant channel now has a pinned summary, updated weekly and approved by a moderator.",
+  "metrica": "Weekly automatic summaries with AI relevance ranking",
+  "destaques": ["Channel classification with AI (GPT-4.1)", "Summary generation with GPT-5", "Human approval before publishing", "Human-in-the-loop sub-workflow"]
+}

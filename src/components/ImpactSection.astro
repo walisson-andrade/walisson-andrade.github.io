@@ -1,19 +1,27 @@
 ---
-import { impactStats } from "@/data/impact";
+import { getImpactStats } from "@/data/impact";
+import type { Lang } from "@/i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pt" } = Astro.props;
+const impactStats = getImpactStats(lang);
 ---
 
-<section class="border-t border-[#1E1E1E] border-b border-b-[#1E1E1E] bg-[#0B0B0B]">
+<section class="border-t-2 border-b-2 border-ink bg-ink">
   <div
     class="max-w-[1180px] mx-auto px-8 py-[62px] grid grid-cols-2 md:grid-cols-4 gap-6"
   >
     {
       impactStats.map((stat) => (
         <div class="text-center">
-          <div class="font-display font-semibold text-[clamp(36px,6vw,58px)] leading-none text-[#F5F5F4] tracking-[-0.01em]">
+          <div class="font-display font-semibold text-[clamp(36px,6vw,58px)] leading-none text-surface tracking-[-0.01em]">
             {stat.value}
             <span class="text-accent">{stat.suffix}</span>
           </div>
-          <div class="font-mono text-[12.5px] text-[#8A8A8A] mt-3 tracking-wide">
+          <div class="font-mono text-[12.5px] text-surface/60 mt-3 tracking-wide">
             {stat.label}
           </div>
         </div>

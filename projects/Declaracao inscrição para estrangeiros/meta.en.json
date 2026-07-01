@@ -1,0 +1,8 @@
+{
+  "titulo": "Automatic Enrollment Declaration Generation",
+  "descricao": "Reads foreign student data from Google Sheets, fills a declaration template in Google Docs with student and course data, converts it to PDF and uploads it to Google Drive.",
+  "problema": "Enrollment declarations for foreign students were filled out manually one by one, causing delays and errors in data like dates, passports and amounts.",
+  "resultado": "Documents generated automatically every 30 minutes, with no filling errors.",
+  "metrica": "Automatic PDF document generation every 30 minutes",
+  "destaques": ["Dynamic template in Google Docs", "Automatic PDF conversion", "Organized by student folder in Drive", "Runs every 30 minutes"]
+}

@@ -1,0 +1,8 @@
+{
+  "titulo": "Sales Chatbot — AI-Driven Conversation Opener",
+  "descricao": "Receives leads from Meta Ads via webhook, looks up course and pricing info, and uses a GPT agent to generate and send personalized opening messages via WhatsApp.",
+  "problema": "Leads from marketing campaigns went unanswered for hours or received generic messages, hurting conversion rates.",
+  "resultado": "Immediate, personalized response for every lead, with context on the course of interest.",
+  "metrica": "First-contact time reduced from hours to seconds",
+  "destaques": ["AI agent for message generation", "WhatsApp integration via Evolution API", "Context persisted in PostgreSQL", "Sub-workflows for course data"]
+}

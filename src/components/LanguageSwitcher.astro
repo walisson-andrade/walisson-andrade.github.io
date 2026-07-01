@@ -1,0 +1,26 @@
+---
+import { languages, type Lang } from "@/i18n/ui";
+import { otherLang } from "@/i18n/utils";
+
+interface Props {
+  lang: Lang;
+  /** current path with the locale prefix already stripped, e.g. "/" or "/automacoes/foo" */
+  path: string;
+  class?: string;
+}
+
+const { lang, path, class: className = "" } = Astro.props;
+const target = otherLang(lang);
+const href = `/${target}${path === "/" ? "" : path}`;
+---
+
+<a
+  href={href}
+  aria-label="Switch language"
+  class:list={[
+    "shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-[7px] border-2 border-ink bg-surface text-ink font-mono text-[11px] font-bold hover:bg-accent hover:text-on-accent transition-colors",
+    className,
+  ]}
+>
+  {languages[target]}
+</a>

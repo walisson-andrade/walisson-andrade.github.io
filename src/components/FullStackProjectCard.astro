@@ -10,11 +10,11 @@ const { project } = Astro.props;
 ---
 
 <div
-  class="bg-surface border border-border rounded-[18px] p-[30px] flex flex-col transition-all duration-300 hover:border-accent/45 hover:shadow-[0_16px_44px_rgba(0,0,0,0.45)] hover:-translate-y-1"
+  class="press-hover-sm bg-surface border-2 border-ink rounded-[14px] p-[30px] flex flex-col hard-shadow-sm"
 >
   <div class="flex items-center justify-between">
     <span
-      class="inline-flex px-[11px] py-[5px] bg-accent/10 border border-accent/25 rounded-full font-mono text-[11px] tracking-wide text-accent"
+      class="inline-flex px-[11px] py-[5px] bg-accent border-2 border-ink rounded-[5px] font-mono text-[11px] font-bold tracking-wide text-on-accent"
     >
       {project.segment}
     </span>
@@ -22,7 +22,7 @@ const { project } = Astro.props;
   </div>
 
   <h3
-    class="font-heading font-semibold text-[22px] leading-[1.2] text-[#F2F2F2] mt-[18px] mb-4"
+    class="font-heading font-semibold text-[22px] leading-[1.2] text-ink mt-[18px] mb-4"
   >
     {project.title}
   </h3>
@@ -31,10 +31,10 @@ const { project } = Astro.props;
     {
       project.metrics.map((metric) => (
         <div class="flex items-start gap-2.5">
-          <span class="text-accent text-sm">{metric.icon}</span>
-          <span class="text-[14.5px] text-[#C4C4C4] leading-[1.45]">
+          <span class="text-accent-gold text-sm">{metric.icon}</span>
+          <span class="text-[14.5px] text-text-secondary leading-[1.45]">
             {metric.text}
-            <strong class="text-white font-semibold">{metric.highlight}</strong>
+            <strong class="text-ink font-semibold">{metric.highlight}</strong>
           </span>
         </div>
       ))
@@ -46,14 +46,14 @@ const { project } = Astro.props;
   </div>
 
   <div
-    class="mt-auto flex flex-col gap-[5px] p-3.5 px-4 bg-surface-alt border border-[#242424] border-l-2 border-l-accent rounded-[10px]"
+    class="mt-auto flex flex-col gap-[5px] p-3.5 px-4 bg-surface-alt border-2 border-ink border-l-[5px] border-l-accent-gold rounded-[8px]"
   >
     <span
-      class="font-mono text-[10.5px] tracking-[0.1em] uppercase text-accent"
+      class="font-mono text-[10.5px] tracking-[0.1em] uppercase text-ink font-bold"
     >
       {project.technicalHighlight.label}
     </span>
-    <span class="text-[13.5px] text-[#CFCFCF] leading-[1.45]">
+    <span class="text-[13.5px] text-text-secondary leading-[1.45]">
       {project.technicalHighlight.description}
     </span>
   </div>

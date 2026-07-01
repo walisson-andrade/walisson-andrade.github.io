@@ -1,0 +1,8 @@
+{
+  "titulo": "Sales Opportunity Generation from the Newsletter",
+  "descricao": "Analyzes monthly newsletter clicks in the CRM, identifies engaged leads who aren't community members yet, and automatically creates sales opportunities.",
+  "problema": "Leads who showed interest via the newsletter weren't converted into sales opportunities — the engagement was lost.",
+  "resultado": "Engaged leads are automatically converted into CRM opportunities, with context notes.",
+  "metrica": "Automatic monthly opportunity creation from engagement data",
+  "destaques": ["Cross-referencing newsletter data with Discord members", "Contact deduplication", "Scheduled monthly execution"]
+}

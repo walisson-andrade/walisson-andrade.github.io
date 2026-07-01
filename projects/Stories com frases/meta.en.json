@@ -1,0 +1,8 @@
+{
+  "titulo": "Inspirational Quote Stories Pipeline (AI + Design + Publishing)",
+  "descricao": "Weekly, generates 30 quotes with OpenAI, creates story images via Placid, sends them for approval by email, and publishes daily to Instagram and Facebook across multiple accounts.",
+  "problema": "Creating and publishing daily stories was 100% manual — from writing the quotes to uploading them to each social network.",
+  "resultado": "A full pipeline: generation, design, approval and automatic publishing across multiple accounts.",
+  "metrica": "30 stories generated per week with automatic daily publishing",
+  "destaques": ["AI content generation", "Automatic design via Placid", "Email approval (human-in-the-loop)", "Publishing across multiple Instagram/Facebook accounts", "Temporary storage in AWS S3"]
+}

@@ -1,0 +1,8 @@
+{
+  "titulo": "Automatic Recurring Task Generation in ClickUp",
+  "descricao": "Reads recurring task definitions from a Google Sheet (frequency, day, time, owner) and creates the tasks automatically in ClickUp according to the schedule rule.",
+  "problema": "Recurring tasks were created manually in ClickUp, risking missed tasks and inconsistent owner assignment.",
+  "resultado": "Tasks created automatically every hour according to configurable spreadsheet criteria.",
+  "metrica": "Automatic hourly task creation with configurable rules",
+  "destaques": ["Flexible scheduling logic (monthly, weekly, by day)", "Random or fixed owner assignment", "Hourly execution"]
+}

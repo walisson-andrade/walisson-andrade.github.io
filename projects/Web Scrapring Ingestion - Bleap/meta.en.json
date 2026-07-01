@@ -1,0 +1,8 @@
+{
+  "titulo": "Web Scraping and AI-Structured Extraction",
+  "descricao": "Scrapes a finance page, cleans the HTML, uses GPT-4o-mini to extract financial facts in structured format, and saves them for later embedding.",
+  "problema": "Financial content relevant to the chatbot was only available as raw HTML, with no structure for AI consumption.",
+  "resultado": "Financial data extracted and normalized automatically, ready for ingestion into the knowledge base.",
+  "metrica": "Continuous, structured extraction of financial content",
+  "destaques": ["Scraping with HTML cleanup", "Structured extraction with an output parser", "Storage in a data table for the embedding pipeline"]
+}

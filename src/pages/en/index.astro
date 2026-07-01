@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getSite } from "@/data/site";
 import Nav from "@/components/Nav.astro";
 import Hero from "@/components/Hero.astro";
 import StackCards from "@/components/StackCards.astro";
@@ -8,15 +9,17 @@ import ImpactSection from "@/components/ImpactSection.astro";
 import Timeline from "@/components/Timeline.astro";
 import CTA from "@/components/CTA.astro";
 import Footer from "@/components/Footer.astro";
+
+const site = getSite("en");
 ---
 
-<BaseLayout>
-  <Nav />
-  <Hero />
-  <StackCards />
-  <ProjectsTabs />
-  <ImpactSection />
-  <Timeline />
-  <CTA />
-  <Footer />
+<BaseLayout lang="en" title={site.title} description={site.subtitle}>
+  <Nav lang="en" />
+  <Hero lang="en" />
+  <StackCards lang="en" />
+  <ProjectsTabs lang="en" />
+  <ImpactSection lang="en" />
+  <Timeline lang="en" />
+  <CTA lang="en" />
+  <Footer lang="en" />
 </BaseLayout>

@@ -1,0 +1,8 @@
+{
+  "titulo": "Automatic Invoice Issuance (Stripe → TOConline)",
+  "descricao": "Every 2 hours, fetches completed Stripe payments, matches them against the TOConline service catalog by amount and VAT rate, automatically issues receipt-invoices, and logs them in Google Sheets.",
+  "problema": "Issuing invoices after each Stripe payment was done manually in the billing system, causing delays and tax compliance risk.",
+  "resultado": "Invoices issued automatically within 2 hours of payment, with a full log.",
+  "metrica": "Automatic billing every 2 hours with amount/VAT matching",
+  "destaques": ["Automatic product matching by amount and VAT tier", "Receipt-invoice issuance via API", "Audit log in Google Sheets", "Runs every 2 hours"]
+}

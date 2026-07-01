@@ -1,12 +1,22 @@
 ---
-import { stacks } from "@/data/stacks";
+import { getStacks } from "@/data/stacks";
+import type { Lang } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
 import SectionHeading from "./SectionHeading.astro";
 import StackIcon from "./StackIcon.astro";
 import TechBadge from "./TechBadge.astro";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pt" } = Astro.props;
+const stacks = getStacks(lang);
+const t = useTranslations(lang);
 ---
 
 <section id="skills" class="max-w-[1180px] mx-auto px-8 py-24">
-  <SectionHeading tag="Stacks de habilidades" title="Três frentes de atuação" />
+  <SectionHeading tag={t("stacks.tag")} title={t("stacks.title")} />
 
   <div
     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[22px] mt-11"
@@ -16,10 +26,10 @@ import TechBadge from "./TechBadge.astro";
         <a
           href={`#projetos`}
           data-activate-tab={stack.tabTarget}
-          class="stack-link block bg-surface border border-border rounded-[18px] p-[30px] transition-all duration-300 hover:border-accent/50 hover:shadow-[0_14px_40px_rgba(0,0,0,0.4)] hover:-translate-y-1 no-underline cursor-pointer group"
+          class="press-hover-sm stack-link block bg-surface border-2 border-ink rounded-[14px] p-[30px] hard-shadow-sm no-underline cursor-pointer group"
         >
           <StackIcon type={stack.icon} />
-          <h3 class="font-heading font-semibold text-[21px] text-[#F2F2F2] mt-[22px] mb-2">
+          <h3 class="font-heading font-semibold text-[21px] text-ink mt-[22px] mb-2">
             {stack.title}
           </h3>
           <p class="text-sm leading-normal text-text-muted mb-5">
@@ -30,8 +40,8 @@ import TechBadge from "./TechBadge.astro";
               <TechBadge name={tech} />
             ))}
           </div>
-          <span class="inline-flex items-center gap-1 font-mono text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-            Ver projetos <span class="text-sm">→</span>
+          <span class="inline-flex items-center gap-1 font-mono text-xs font-bold text-on-accent bg-accent px-2 py-0.5 rounded-[4px] opacity-0 group-hover:opacity-100 transition-opacity">
+            {t("stacks.cta")} <span class="text-sm">→</span>
           </span>
         </a>
       ))

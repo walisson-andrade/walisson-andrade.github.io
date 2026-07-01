@@ -1,0 +1,8 @@
+{
+  "titulo": "Centralized Error Monitoring",
+  "descricao": "Captures errors from any linked workflow and sends a Slack notification with the flow name, error message and execution link.",
+  "problema": "Automation errors went unnoticed until someone manually spotted the failure.",
+  "resultado": "Real-time Slack alerts for any automation failure.",
+  "metrica": "Error detection time reduced to seconds",
+  "destaques": ["Centralized error trigger", "Notification with full context (workflow, error, link)", "Forwarding to a consolidation webhook"]
+}
