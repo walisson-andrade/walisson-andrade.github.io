@@ -1,22 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0F0F0F;
-  --color-surface: #141414;
-  --color-surface-alt: #171717;
-  --color-border: #232323;
-  --color-border-hover: #2E2E2E;
-  --color-text: #EDEDED;
-  --color-text-secondary: #9A9A9A;
-  --color-text-muted: #8E8E8E;
-  --color-text-dim: #555;
+  --color-bg: #0F0E0D;
+  --color-surface: #161311;
+  --color-surface-alt: #191614;
+  --color-border: #2A2521;
+  --color-border-hover: #3A322B;
+  --color-text: #F1EDE8;
+  --color-text-secondary: #A79D91;
+  --color-text-muted: #8D8378;
+  --color-text-dim: #5C5449;
   --color-accent: #FF6D42;
+  --color-accent-gold: #E8A23D;
   --color-accent-blue: #3B82F6;
   --color-success: #37C871;
 
-  --font-heading: "Space Grotesk", sans-serif;
-  --font-body: "Manrope", sans-serif;
+  --font-display: "Fraunces Variable", "Fraunces", serif;
+  --font-heading: "Bricolage Grotesque Variable", "Bricolage Grotesque", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 12% -10%, rgba(255, 109, 66, 0.14), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 100% 15%, rgba(232, 162, 61, 0.08), transparent 55%),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: auto, auto, 64px 64px, 64px 64px;
+  background-position: top, top, -1px -1px, -1px -1px;
+  background-attachment: fixed;
 }
 
 ::selection {
