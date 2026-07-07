@@ -1,0 +1,47 @@
+---
+import { getSite } from "@/data/site";
+import type { Lang } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pt" } = Astro.props;
+const site = getSite(lang);
+const t = useTranslations(lang);
+---
+
+<section id="contato" class="relative overflow-hidden border-t border-line">
+  <div class="hero-glow w-[600px] h-[400px] -bottom-[220px] left-1/2 -translate-x-1/2"></div>
+
+  <div class="max-w-[760px] mx-auto px-8 py-24 text-center relative">
+    <span class="inline-block font-mono text-[11px] tracking-[0.14em] uppercase text-accent bg-accent-soft border border-accent/20 px-2.5 py-1 rounded-full">
+      {t("cta.tag")}
+    </span>
+    <h2 class="font-display font-semibold text-[clamp(30px,5vw,48px)] leading-[1.15] tracking-[-0.01em] text-ink mt-5">
+      {site.cta} <span class="ink-accent">{t("cta.highlight")}</span>
+    </h2>
+
+    <div class="flex items-center justify-center gap-4 mt-10 flex-wrap">
+      <a
+        href={site.linkedin}
+        target="_blank"
+        rel="noopener"
+        class="press no-underline inline-flex items-center gap-[9px] px-7 py-[15px] rounded-full bg-accent text-accent-ink text-[15px] font-body font-semibold shadow-soft"
+      >
+        LinkedIn <span class="text-base">→</span>
+      </a>
+      <a
+        href={site.whatsappLink}
+        target="_blank"
+        rel="noopener"
+        class="press no-underline inline-flex items-center gap-[9px] px-7 py-[15px] rounded-full border border-line bg-surface text-ink text-[15px] font-body font-semibold hover:border-accent transition-colors"
+      >
+        WhatsApp <span class="font-mono text-sm text-ink-soft">{site.whatsapp}</span>
+      </a>
+    </div>
+
+    <p class="mt-7 font-mono text-sm text-ink-soft">{site.email}</p>
+  </div>
+</section>

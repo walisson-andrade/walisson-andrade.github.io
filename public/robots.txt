@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://walisson-andrade.github.io/sitemap-index.xml

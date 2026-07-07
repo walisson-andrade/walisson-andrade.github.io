@@ -1,0 +1,56 @@
+---
+import { getStacks } from "@/data/stacks";
+import type { Lang } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
+import SectionHeading from "./SectionHeading.astro";
+import StackIcon from "./StackIcon.astro";
+import TechBadge from "./TechBadge.astro";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pt" } = Astro.props;
+const stacks = getStacks(lang);
+const t = useTranslations(lang);
+---
+
+<section id="skills" class="max-w-[1180px] mx-auto px-8 py-24">
+  <SectionHeading tag={t("stacks.tag")} title={t("stacks.title")} />
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[22px] mt-11">
+    {
+      stacks.map((stack) => (
+        <a
+          href={`#projetos`}
+          data-activate-tab={stack.tabTarget}
+          class="card-hover stack-link block bg-surface border border-line rounded-[16px] p-[30px] shadow-soft no-underline cursor-pointer group"
+        >
+          <StackIcon type={stack.icon} />
+          <h3 class="font-body font-bold text-[20px] text-ink mt-[22px] mb-2">{stack.title}</h3>
+          <p class="text-sm leading-normal text-ink-soft mb-5">{stack.description}</p>
+          <div class="flex flex-wrap gap-[7px] mb-4">
+            {stack.technologies.map((tech) => (
+              <TechBadge name={tech} />
+            ))}
+          </div>
+          <span class="inline-flex items-center gap-1 font-mono text-xs font-medium text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+            {t("stacks.cta")} <span class="text-sm">→</span>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>(".stack-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const tabId = link.dataset.activateTab;
+      const tabBtn = document.querySelector<HTMLButtonElement>(`.tab-btn[data-tab="${tabId}"]`);
+      if (tabBtn) tabBtn.click();
+      document.getElementById("projetos")?.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+</script>
