@@ -3,76 +3,64 @@ import type { FullStackProject } from "@/lib/types";
 
 interface Props {
   project: FullStackProject;
-  isFirst?: boolean;
+  index?: number;
 }
 
-const { project, isFirst = false } = Astro.props;
-const isEven = Number(project.number) % 2 === 0;
+const { project, index = 0 } = Astro.props;
+const delay = (index % 4) * 90;
 ---
 
 <article
-  class:list={[
-    "relative py-14 md:py-20 overflow-hidden",
-    !isFirst && "border-t border-line",
-  ]}
+  class="card-hover group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface"
+  data-reveal
+  style={`--reveal-delay: ${delay}ms`}
 >
-  <span
-    class:list={[
-      "pointer-events-none select-none absolute -top-2 md:-top-10 font-display font-semibold text-[clamp(110px,20vw,260px)] leading-none text-ink/[0.05] z-0",
-      isEven ? "left-0" : "right-0",
-    ]}
-    aria-hidden="true"
+  <div
+    class="relative aspect-[16/10] flex items-end p-6 md:p-7 overflow-hidden"
+    style="background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 22%, var(--color-bg-alt)), color-mix(in srgb, var(--color-pink) 18%, var(--color-bg-alt)));"
   >
-    {project.number}
-  </span>
-
-  <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 items-start">
-    <div
-      class:list={[
-        "relative aspect-[4/3] md:aspect-auto md:h-[420px] overflow-hidden border border-line bg-bg-alt flex items-end p-6 md:p-8 md:row-start-1",
-        isEven ? "md:col-start-6 md:col-span-7" : "md:col-span-7",
-      ]}
+    <span
+      class="pointer-events-none select-none absolute -top-4 -right-2 font-display font-bold text-[120px] leading-none text-ink/[0.06]"
+      aria-hidden="true"
     >
-      <span class="font-display italic text-[clamp(26px,4vw,42px)] leading-tight text-ink-soft/70">
-        {project.segment}
+      {project.number}
+    </span>
+    <span class="relative font-display italic text-xl md:text-2xl leading-tight text-ink-soft">
+      {project.segment}
+    </span>
+  </div>
+
+  <div class="flex flex-1 flex-col p-6 md:p-7">
+    <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">{project.segment}</p>
+    <h3 class="font-display font-bold text-xl md:text-[22px] leading-[1.2] text-ink mt-2">
+      {project.title}
+    </h3>
+
+    <ul class="mt-5 flex flex-col gap-2 border-t border-line pt-4">
+      {
+        project.metrics.map((metric) => (
+          <li class="text-[13.5px] text-ink-soft leading-relaxed">
+            <span class="text-pink mr-1" aria-hidden="true">
+              {metric.icon}
+            </span>
+            {metric.text}
+            <strong class="text-ink font-semibold">{metric.highlight}</strong>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="mt-4 font-mono text-[11px] uppercase tracking-[0.06em] text-ink-soft">
+      {project.technologies.join(" · ")}
+    </p>
+
+    <div class="mt-5 pl-4 border-l-2 border-accent/40">
+      <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-soft">
+        {project.technicalHighlight.label}
       </span>
-    </div>
-
-    <div
-      class:list={[
-        "relative md:row-start-1",
-        isEven ? "md:col-start-1 md:col-span-5" : "md:col-start-8 md:col-span-5",
-      ]}
-    >
-      <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">{project.segment}</p>
-      <h3 class="font-display font-semibold text-2xl md:text-[32px] leading-[1.15] text-ink mt-3">
-        {project.title}
-      </h3>
-
-      <ul class="mt-6 flex flex-col gap-2 border-t border-line pt-5">
-        {
-          project.metrics.map((metric) => (
-            <li class="text-[13.5px] text-ink-soft leading-relaxed">
-              <span class="text-accent mr-1">{metric.icon}</span>
-              {metric.text}
-              <strong class="text-ink font-semibold">{metric.highlight}</strong>
-            </li>
-          ))
-        }
-      </ul>
-
-      <p class="mt-5 font-mono text-[11px] uppercase tracking-[0.06em] text-ink-soft/70">
-        {project.technologies.join(" · ")}
+      <p class="text-[12.5px] leading-relaxed text-ink-soft mt-1.5">
+        {project.technicalHighlight.description}
       </p>
-
-      <div class="mt-6 pl-4 border-l border-line">
-        <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-soft/70">
-          {project.technicalHighlight.label}
-        </span>
-        <p class="text-[12.5px] leading-relaxed text-ink-soft mt-1.5">
-          {project.technicalHighlight.description}
-        </p>
-      </div>
     </div>
   </div>
 </article>

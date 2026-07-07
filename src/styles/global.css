@@ -3,88 +3,113 @@
 @custom-variant dark (&:is([data-theme="dark"] *));
 
 @theme {
-  /* editorial, warm-paper palette */
-  --color-bg: #faf6ee;
-  --color-bg-alt: #f1e9d8;
-  --color-surface: #fffdf8;
-  --color-ink: #1b1810;
-  --color-ink-soft: #625c4e;
-  --color-accent: #e8542a;
-  --color-accent-soft: #fbd7c4;
-  --color-accent-ink: #fffbf5;
-  --color-line: #e2d6be;
-  --color-teal: #1f5f5b;
+  /* AI-generation palette — violet workhorse accent (safe at all text sizes),
+     pink reserved for large/decorative highlights */
+  --color-bg: #faf5ff;
+  --color-bg-alt: #f3eafb;
+  --color-surface: #ffffff;
+  --color-ink: #0f172a;
+  --color-ink-soft: #58527a;
+  --color-accent: #7c3aed;
+  --color-accent-soft: #f3e1ef;
+  --color-accent-ink: #ffffff;
+  --color-line: #e8dff5;
+  --color-teal: #059669;
+  --color-pink: #ec4899;
+  --color-pink-fill: #db2777;
 
-  --font-display: "Fraunces Variable", "Fraunces", serif;
-  --font-body: "IBM Plex Sans", sans-serif;
+  --font-display: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  --font-body: "Archivo Variable", "Archivo", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 }
 
 [data-theme="dark"] {
-  --color-bg: #14110a;
-  --color-bg-alt: #1d1810;
-  --color-surface: #211c13;
-  --color-ink: #f3ecdd;
-  --color-ink-soft: #b8af9b;
-  --color-accent: #ff6a3d;
-  --color-accent-soft: #3a2417;
-  --color-accent-ink: #14110a;
-  --color-line: #332c1e;
-  --color-teal: #4fbfb8;
-}
-
-:root {
-  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --color-bg: #120b22;
+  --color-bg-alt: #1b1130;
+  --color-surface: #1f1436;
+  --color-ink: #f3edff;
+  --color-ink-soft: #b7a9d9;
+  --color-accent: #a78bfa;
+  --color-accent-soft: #35182b;
+  --color-accent-ink: #120b22;
+  --color-line: #362955;
+  --color-teal: #34d399;
+  --color-pink: #f472b6;
+  --color-pink-fill: #db2777;
 }
 
 body {
   background-color: var(--color-bg);
-  background-image: var(--noise);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -10%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent),
+    radial-gradient(ellipse 700px 500px at 100% 10%, color-mix(in srgb, var(--color-pink) 12%, transparent), transparent);
+  background-repeat: no-repeat;
   transition:
     background-color 200ms ease,
     color 200ms ease;
 }
 
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-pink);
   color: var(--color-accent-ink);
 }
 
-/* editorial italic accent — underline instead of neo-brutalist chip */
+/* hero highlight word — large display text only (>=3:1 threshold covers pink here) */
 .ink-accent {
-  color: var(--color-accent);
-  font-style: italic;
-  text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 0.09em;
+  color: var(--color-pink);
 }
 
-/* duotone treatment for the opening portrait — texture, not a framed card */
-.duotone-photo {
-  filter: grayscale(1) sepia(0.35) contrast(1.08) brightness(0.96);
+/* solid pink CTA fill — a deeper shade than --color-pink so white text clears 4.5:1 */
+.btn-fill {
+  background-color: var(--color-pink-fill);
+  color: #ffffff;
 }
 
-.duotone-overlay {
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--color-accent) 55%, transparent),
-    color-mix(in srgb, var(--color-teal) 45%, transparent)
-  );
-  mix-blend-mode: color;
-  opacity: 0.6;
+/* portrait treatment for the opening photo — soft gradient ring, no duotone/grayscale */
+.portrait-frame {
+  border-radius: 1.75rem;
+  position: relative;
 }
 
-[data-theme="dark"] .duotone-overlay {
+.portrait-glow {
+  position: absolute;
+  inset: -6%;
+  z-index: -1;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-pink));
+  filter: blur(38px);
   opacity: 0.45;
+}
+
+[data-theme="dark"] .portrait-glow {
+  opacity: 0.55;
 }
 
 .hero-glow {
   position: absolute;
   border-radius: 9999px;
-  background: var(--color-accent-soft);
-  filter: blur(60px);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-pink));
+  filter: blur(70px);
+  opacity: 0.35;
   pointer-events: none;
+}
+
+[data-theme="dark"] .hero-glow {
+  opacity: 0.4;
+}
+
+/* card hover lift — used on project/skill/automation cards */
+.card-hover {
+  transition:
+    transform 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 300ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 16px 40px -16px color-mix(in srgb, var(--color-accent) 35%, transparent);
 }
 
 @keyframes reveal {
@@ -122,6 +147,28 @@ body {
   animation-delay: 360ms;
 }
 
+/* scroll-triggered reveal — driven by the IntersectionObserver in BaseLayout.
+   Elements start hidden; JS adds .is-visible once they enter the viewport.
+   If JS never runs (disabled) elements still show via the noscript fallback. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+noscript [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
 @keyframes pulse-dot {
   0%,
   100% {
@@ -134,6 +181,14 @@ body {
 
 .pulse-dot {
   animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+/* impact ticker suffix — bg-ink flips polarity per theme (dark band in light
+   mode, light band in dark mode), so theme-dependent accent/pink tokens drop
+   under 3:1 against one of the two band states. This fixed rose shade holds
+   >=3:1 (large-text AA) against both band states. */
+.ticker-accent {
+  color: #ae4a80;
 }
 
 /* impact ticker — infinite horizontal marquee, paused on hover */
@@ -162,6 +217,14 @@ body {
   .reveal-4 {
     animation: none;
     opacity: 1;
+    transform: none;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .card-hover:hover {
     transform: none;
   }
   .pulse-dot {

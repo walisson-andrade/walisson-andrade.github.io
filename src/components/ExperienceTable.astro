@@ -18,8 +18,12 @@ const t = useTranslations(lang);
 
   <div class="mt-12 md:mt-14 border-t border-line max-w-[860px]">
     {
-      experiences.map((exp) => (
-        <div class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-6 md:py-7 border-b border-line">
+      experiences.map((exp, i) => (
+        <div
+          class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-6 md:py-7 border-b border-line"
+          data-reveal
+          style={`--reveal-delay: ${Math.min(i, 4) * 80}ms`}
+        >
           <div class="font-mono text-[12px] uppercase tracking-[0.08em] text-ink-soft flex items-center gap-2">
             {exp.isCurrent && <span class="w-1.5 h-1.5 rounded-full bg-teal shrink-0" />}
             {exp.period}

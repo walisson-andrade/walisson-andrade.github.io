@@ -20,11 +20,11 @@ const icons = automation.tecnologias
   .slice(0, 6);
 ---
 
-<details class="group border-b border-line">
+<details class="group border-b border-line" data-reveal style={`--reveal-delay: ${Math.min(index, 6) * 60}ms`}>
   <summary
-    class="list-none flex flex-wrap md:flex-nowrap items-center gap-3 md:gap-5 py-4 md:py-5 cursor-pointer select-none [&::-webkit-details-marker]:hidden"
+    class="list-none flex flex-wrap md:flex-nowrap items-center gap-3 md:gap-5 py-4 md:py-5 px-3 -mx-3 rounded-lg cursor-pointer select-none transition-colors hover:bg-accent-soft [&::-webkit-details-marker]:hidden"
   >
-    <span class="font-mono text-[12px] text-ink-soft/60 w-7 shrink-0">{idx}</span>
+    <span class="font-mono text-[12px] text-ink-soft w-7 shrink-0">{idx}</span>
     <span class="font-mono text-[13px] md:text-[14px] text-ink font-medium shrink-0 md:w-[300px] md:pr-4">
       {automation.titulo}
     </span>
@@ -32,7 +32,7 @@ const icons = automation.tecnologias
     <span class="hidden sm:flex items-center gap-2 shrink-0">
       {
         icons.map(({ tech, svg }) => (
-          <span class="w-[14px] h-[14px] text-ink-soft/70" title={tech} set:html={svg} />
+          <span class="w-[14px] h-[14px] text-ink-soft" title={tech} set:html={svg} />
         ))
       }
     </span>
@@ -69,12 +69,12 @@ const icons = automation.tecnologias
       )
     }
     <div class="md:col-span-2 flex flex-wrap items-center justify-between gap-3 pt-2">
-      <p class="font-mono text-[11px] text-ink-soft/70">{automation.tecnologias.join(" · ")}</p>
+      <p class="font-mono text-[11px] text-ink-soft">{automation.tecnologias.join(" · ")}</p>
       <a
         href={href}
         class="no-underline inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.06em] text-accent border-b border-accent/40 hover:border-accent pb-0.5 w-fit"
       >
-        {t("projects.viewDetails")} →
+        {t("projects.viewDetails")} <span aria-hidden="true">→</span>
       </a>
     </div>
   </div>

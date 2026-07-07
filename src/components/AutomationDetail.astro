@@ -34,7 +34,7 @@ const idx = String(index).padStart(2, "0");
           href={projectsHref}
           class="no-underline inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-soft hover:text-accent transition-colors"
         >
-          <span>←</span> {t("nav.back")}
+          <span aria-hidden="true">←</span> {t("nav.back")}
         </a>
         <LanguageSwitcher lang={lang} path={currentPath} />
         <ThemeToggle />
@@ -120,7 +120,7 @@ const idx = String(index).padStart(2, "0");
         <p class="font-mono text-[12.5px] text-ink-soft mt-2">{automation.tecnologias.join(" · ")}</p>
       </div>
 
-      <p class="mt-16 font-mono text-[11px] text-ink-soft/70">{t("automation.confidentiality")}</p>
+      <p class="mt-16 font-mono text-[11px] text-ink-soft">{t("automation.confidentiality")}</p>
     </div>
   </main>
 </BaseLayout>

@@ -17,10 +17,10 @@ const t = useTranslations(lang);
 <section id="projetos" class="max-w-[1180px] mx-auto px-6 md:px-8 py-20 md:py-28">
   <SectionHeading tag={t("projects.tag")} title={t("projects.title")} subtitle={t("projects.subtitle")} />
 
-  <div class="mt-4">
+  <div class="mt-12 md:mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-start">
     {
       fullstackProjects.map((project, i) => (
-        <CaseStudyBlock project={project} isFirst={i === 0} />
+        <CaseStudyBlock project={project} index={i} />
       ))
     }
   </div>
