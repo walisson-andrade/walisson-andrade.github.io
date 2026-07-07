@@ -16,25 +16,20 @@ export const ui = {
     "nav.back": "Voltar aos projetos",
 
     "hero.available": "Disponível para projetos",
+    "opening.workLink": "Ver o trabalho",
 
     "stacks.tag": "Stacks de habilidades",
     "stacks.title": "Três frentes de atuação",
-    "stacks.cta": "Ver projetos",
 
     "projects.tag": "Projetos",
     "projects.title": "Construído para produção",
     "projects.subtitle": "Projetos reais em produção. Clientes não divulgados por contrato.",
-    "projects.tab.automations": "Automações",
-    "projects.tab.fullstack": "Full Stack",
-    "projects.tab.data": "Data & BI",
     "projects.confidentiality": "Capturas ilustrativas. Fluxos reais sob acordo de confidencialidade",
-    "projects.viewDetails": "Ver detalhes",
+    "projects.viewDetails": "Ver detalhes completos",
     "projects.result": "Resultado",
-    "projects.technicalHighlight": "Destaque técnico",
-    "projects.data.title": "Projetos de Data & BI",
-    "projects.data.description":
-      "Dashboards, pipelines de dados e análises preditivas em desenvolvimento.",
-    "projects.data.comingSoon": "Em breve",
+
+    "automations.tag": "Automações",
+    "automations.title": "Registro de automações",
 
     "experience.tag": "Trajetória",
     "experience.title": "Experiência",
@@ -64,25 +59,20 @@ export const ui = {
     "nav.back": "Back to projects",
 
     "hero.available": "Available for projects",
+    "opening.workLink": "See the work",
 
     "stacks.tag": "Skill stacks",
     "stacks.title": "Three lanes of work",
-    "stacks.cta": "View projects",
 
     "projects.tag": "Projects",
     "projects.title": "Built for production",
     "projects.subtitle": "Real projects in production. Clients undisclosed under contract.",
-    "projects.tab.automations": "Automations",
-    "projects.tab.fullstack": "Full Stack",
-    "projects.tab.data": "Data & BI",
     "projects.confidentiality": "Illustrative captures. Real flows under confidentiality agreement",
-    "projects.viewDetails": "View details",
+    "projects.viewDetails": "View full details",
     "projects.result": "Result",
-    "projects.technicalHighlight": "Technical highlight",
-    "projects.data.title": "Data & BI Projects",
-    "projects.data.description":
-      "Dashboards, data pipelines and predictive analytics currently in development.",
-    "projects.data.comingSoon": "Coming soon",
+
+    "automations.tag": "Automations",
+    "automations.title": "Automation log",
 
     "experience.tag": "Trajectory",
     "experience.title": "Experience",

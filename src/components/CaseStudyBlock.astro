@@ -1,0 +1,78 @@
+---
+import type { FullStackProject } from "@/lib/types";
+
+interface Props {
+  project: FullStackProject;
+  isFirst?: boolean;
+}
+
+const { project, isFirst = false } = Astro.props;
+const isEven = Number(project.number) % 2 === 0;
+---
+
+<article
+  class:list={[
+    "relative py-14 md:py-20 overflow-hidden",
+    !isFirst && "border-t border-line",
+  ]}
+>
+  <span
+    class:list={[
+      "pointer-events-none select-none absolute -top-2 md:-top-10 font-display font-semibold text-[clamp(110px,20vw,260px)] leading-none text-ink/[0.05] z-0",
+      isEven ? "left-0" : "right-0",
+    ]}
+    aria-hidden="true"
+  >
+    {project.number}
+  </span>
+
+  <div class="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-6 items-start">
+    <div
+      class:list={[
+        "relative aspect-[4/3] md:aspect-auto md:h-[420px] overflow-hidden border border-line bg-bg-alt flex items-end p-6 md:p-8 md:row-start-1",
+        isEven ? "md:col-start-6 md:col-span-7" : "md:col-span-7",
+      ]}
+    >
+      <span class="font-display italic text-[clamp(26px,4vw,42px)] leading-tight text-ink-soft/70">
+        {project.segment}
+      </span>
+    </div>
+
+    <div
+      class:list={[
+        "relative md:row-start-1",
+        isEven ? "md:col-start-1 md:col-span-5" : "md:col-start-8 md:col-span-5",
+      ]}
+    >
+      <p class="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">{project.segment}</p>
+      <h3 class="font-display font-semibold text-2xl md:text-[32px] leading-[1.15] text-ink mt-3">
+        {project.title}
+      </h3>
+
+      <ul class="mt-6 flex flex-col gap-2 border-t border-line pt-5">
+        {
+          project.metrics.map((metric) => (
+            <li class="text-[13.5px] text-ink-soft leading-relaxed">
+              <span class="text-accent mr-1">{metric.icon}</span>
+              {metric.text}
+              <strong class="text-ink font-semibold">{metric.highlight}</strong>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="mt-5 font-mono text-[11px] uppercase tracking-[0.06em] text-ink-soft/70">
+        {project.technologies.join(" · ")}
+      </p>
+
+      <div class="mt-6 pl-4 border-l border-line">
+        <span class="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-soft/70">
+          {project.technicalHighlight.label}
+        </span>
+        <p class="text-[12.5px] leading-relaxed text-ink-soft mt-1.5">
+          {project.technicalHighlight.description}
+        </p>
+      </div>
+    </div>
+  </div>
+</article>

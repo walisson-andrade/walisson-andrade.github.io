@@ -1,0 +1,46 @@
+---
+import { getImpactStats } from "@/data/impact";
+import type { Lang } from "@/i18n/ui";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pt" } = Astro.props;
+const impactStats = getImpactStats(lang);
+---
+
+<section class="ticker relative overflow-hidden border-y border-line bg-ink py-10 md:py-12" aria-label="Impact stats">
+  <div class="ticker-track flex w-max items-center">
+    <div class="flex items-center gap-16 md:gap-24 pr-16 md:pr-24">
+      {
+        impactStats.map((stat) => (
+          <div class="flex items-baseline gap-3 shrink-0">
+            <span class="font-display font-semibold text-[clamp(30px,5vw,48px)] leading-none text-bg">
+              {stat.value}
+              <span class="text-accent">{stat.suffix}</span>
+            </span>
+            <span class="font-mono text-[11px] uppercase tracking-[0.08em] text-bg/55 whitespace-nowrap">
+              {stat.label}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+    <div class="ticker-dup flex items-center gap-16 md:gap-24 pr-16 md:pr-24" aria-hidden="true">
+      {
+        impactStats.map((stat) => (
+          <div class="flex items-baseline gap-3 shrink-0">
+            <span class="font-display font-semibold text-[clamp(30px,5vw,48px)] leading-none text-bg">
+              {stat.value}
+              <span class="text-accent">{stat.suffix}</span>
+            </span>
+            <span class="font-mono text-[11px] uppercase tracking-[0.08em] text-bg/55 whitespace-nowrap">
+              {stat.label}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

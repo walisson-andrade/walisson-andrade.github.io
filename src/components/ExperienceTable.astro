@@ -1,0 +1,37 @@
+---
+import { getExperiences } from "@/data/experience";
+import type { Lang } from "@/i18n/ui";
+import { useTranslations } from "@/i18n/utils";
+import SectionHeading from "./SectionHeading.astro";
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = "pt" } = Astro.props;
+const experiences = getExperiences(lang);
+const t = useTranslations(lang);
+---
+
+<section id="experiencia" class="max-w-[1180px] mx-auto px-6 md:px-8 py-20 md:py-28">
+  <SectionHeading tag={t("experience.tag")} title={t("experience.title")} />
+
+  <div class="mt-12 md:mt-14 border-t border-line max-w-[860px]">
+    {
+      experiences.map((exp) => (
+        <div class="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-2 md:gap-8 py-6 md:py-7 border-b border-line">
+          <div class="font-mono text-[12px] uppercase tracking-[0.08em] text-ink-soft flex items-center gap-2">
+            {exp.isCurrent && <span class="w-1.5 h-1.5 rounded-full bg-teal shrink-0" />}
+            {exp.period}
+          </div>
+          <div>
+            <p class="font-body font-bold text-lg text-ink">
+              {exp.company} <span class="font-normal text-base text-ink-soft">· {exp.role}</span>
+            </p>
+            <p class="text-[14.5px] leading-relaxed text-ink-soft mt-2 max-w-[560px]">{exp.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -9,11 +9,12 @@ const { tag, title, subtitle } = Astro.props;
 ---
 
 <div>
-  <span
-    class="inline-block font-mono text-[11px] tracking-[0.14em] uppercase text-accent bg-accent-soft border border-accent/20 px-2.5 py-1 rounded-full"
-  >
-    {tag}
-  </span>
+  <div class="flex items-center gap-4">
+    <span class="shrink-0 font-mono text-[11px] tracking-[0.16em] uppercase text-accent">
+      {tag}
+    </span>
+    <span class="h-px flex-1 max-w-[72px] bg-line"></span>
+  </div>
   <h2
     class="font-display font-semibold text-[clamp(30px,5vw,44px)] leading-[1.08] tracking-[-0.01em] text-ink mt-4"
   >
