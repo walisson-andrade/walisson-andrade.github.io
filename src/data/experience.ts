@@ -4,7 +4,7 @@ import type { Lang } from "@/i18n/ui";
 const experiencesByLang: Record<Lang, Experience[]> = {
   pt: [
     {
-      period: "2025 - atual",
+      period: "2025 - 2026",
       company: "NILG.AI",
       role: "AI & Full Stack Engineer",
       description:
