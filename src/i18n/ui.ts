@@ -16,24 +16,25 @@ export const ui = {
     "nav.back": "Voltar aos projetos",
 
     "hero.available": "Disponível para projetos",
-    "opening.workLink": "Ver o trabalho",
 
     "stacks.tag": "Stacks de habilidades",
     "stacks.title": "Três frentes de atuação",
+    "stacks.cta": "Ver projetos",
 
     "projects.tag": "Projetos",
     "projects.title": "Construído para produção",
     "projects.subtitle": "Projetos reais em produção. Clientes não divulgados por contrato.",
+    "projects.tab.automations": "Automações",
+    "projects.tab.fullstack": "Full Stack",
+    "projects.tab.data": "Data & BI",
     "projects.confidentiality": "Capturas ilustrativas. Fluxos reais sob acordo de confidencialidade",
-    "projects.viewDetails": "Ver detalhes completos",
+    "projects.viewDetails": "Ver detalhes",
     "projects.result": "Resultado",
-
-    "siteProjects.tag": "Sites & Landing Pages",
-    "siteProjects.title": "Sites que colocamos no ar",
-    "siteProjects.visit": "Visitar site",
-
-    "automations.tag": "Automações",
-    "automations.title": "Registro de automações",
+    "projects.technicalHighlight": "Destaque técnico",
+    "projects.data.title": "Projetos de Data & BI",
+    "projects.data.description":
+      "Dashboards, pipelines de dados e análises preditivas desenvolvidos na Accenture e em projetos independentes.",
+    "projects.data.comingSoon": "Em breve",
 
     "experience.tag": "Trajetória",
     "experience.title": "Experiência",
@@ -42,7 +43,7 @@ export const ui = {
     "cta.highlight": "Vamos conversar.",
 
     "footer.confidentiality": "Projetos reais em produção. Detalhes de clientes não divulgados por contrato",
-    "footer.tagline": "IA Aplicada · Full Stack · Automação",
+    "footer.tagline": "Automação · Full Stack · Dados",
 
     "automation.badge": "Automação n8n",
     "automation.problem": "Problema",
@@ -63,24 +64,25 @@ export const ui = {
     "nav.back": "Back to projects",
 
     "hero.available": "Available for projects",
-    "opening.workLink": "See the work",
 
     "stacks.tag": "Skill stacks",
     "stacks.title": "Three lanes of work",
+    "stacks.cta": "View projects",
 
     "projects.tag": "Projects",
     "projects.title": "Built for production",
     "projects.subtitle": "Real projects in production. Clients undisclosed under contract.",
+    "projects.tab.automations": "Automations",
+    "projects.tab.fullstack": "Full Stack",
+    "projects.tab.data": "Data & BI",
     "projects.confidentiality": "Illustrative captures. Real flows under confidentiality agreement",
-    "projects.viewDetails": "View full details",
+    "projects.viewDetails": "View details",
     "projects.result": "Result",
-
-    "siteProjects.tag": "Sites & Landing Pages",
-    "siteProjects.title": "Sites shipped to production",
-    "siteProjects.visit": "Visit site",
-
-    "automations.tag": "Automations",
-    "automations.title": "Automation log",
+    "projects.technicalHighlight": "Technical highlight",
+    "projects.data.title": "Data & BI Projects",
+    "projects.data.description":
+      "Dashboards, data pipelines and predictive analytics built at Accenture and in independent projects.",
+    "projects.data.comingSoon": "Coming soon",
 
     "experience.tag": "Trajectory",
     "experience.title": "Experience",
@@ -89,7 +91,7 @@ export const ui = {
     "cta.highlight": "Let's talk.",
 
     "footer.confidentiality": "Real projects in production. Client details undisclosed under contract",
-    "footer.tagline": "Applied AI · Full Stack · Automation",
+    "footer.tagline": "Automation · Full Stack · Data",
 
     "automation.badge": "n8n automation",
     "automation.problem": "Problem",

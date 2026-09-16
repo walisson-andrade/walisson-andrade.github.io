@@ -2,42 +2,42 @@ import type { Stack } from "@/lib/types";
 import type { Lang } from "@/i18n/ui";
 
 const technologies = {
-  ai: ["Machine Learning", "Python", "LLMs", "RAG", "Prompt Engineering", "Embeddings", "OpenAI", "Anthropic API"],
-  fullstack: ["TypeScript", "React.js", "Next.js", "Node.js", "FastAPI", "PostgreSQL", "SQL", "Docker"],
-  automation: ["n8n", "SQL", "Análise de dados", "APIs REST", "Webhooks", "Dashboards"],
+  automation: ["n8n", "Zapier", "Make", "Webhooks", "APIs REST", "WhatsApp", "Slack", "Notion", "Airtable"],
+  fullstack: ["TypeScript", "Python", "React", "Next.js", "FastAPI", "PostgreSQL", "Docker", "AWS", "Terraform"],
+  data: ["Power BI", "SQL Server", "Python", "Pentaho", "Excel", "GCP"],
 };
 
 const stacksByLang: Record<Lang, Stack[]> = {
   pt: [
     {
-      title: "IA Aplicada",
-      description: "Modelos e pipelines de IA generativa que viram produto, não apenas protótipo.",
+      title: "Automação Low-Code",
+      description: "Fluxos que conectam ferramentas e eliminam trabalho repetitivo.",
       icon: "automation",
-      tabTarget: "fullstack",
-      technologies: technologies.ai,
+      tabTarget: "automacoes",
+      technologies: technologies.automation,
     },
     {
-      title: "Full Stack Development",
+      title: "Desenvolvimento Full Stack",
       description: "Aplicações web completas, do banco de dados à interface.",
       icon: "fullstack",
       tabTarget: "fullstack",
       technologies: technologies.fullstack,
     },
     {
-      title: "Automação & Dados",
-      description: "Fluxos que conectam sistemas, eliminam trabalho repetitivo e geram visibilidade.",
+      title: "Análise de Dados & BI",
+      description: "Pipelines, dashboards e decisões guiadas por dados.",
       icon: "data",
-      tabTarget: "automacoes",
-      technologies: technologies.automation,
+      tabTarget: "data",
+      technologies: technologies.data,
     },
   ],
   en: [
     {
-      title: "Applied AI",
-      description: "Generative AI models and pipelines that become real product, not just prototypes.",
+      title: "Low-Code Automation",
+      description: "Flows that connect tools and eliminate repetitive work.",
       icon: "automation",
-      tabTarget: "fullstack",
-      technologies: technologies.ai,
+      tabTarget: "automacoes",
+      technologies: technologies.automation,
     },
     {
       title: "Full Stack Development",
@@ -47,11 +47,11 @@ const stacksByLang: Record<Lang, Stack[]> = {
       technologies: technologies.fullstack,
     },
     {
-      title: "Automation & Data",
-      description: "Flows that connect systems, remove repetitive work and create visibility.",
+      title: "Data Analysis & BI",
+      description: "Pipelines, dashboards and data-driven decisions.",
       icon: "data",
-      tabTarget: "automacoes",
-      technologies: technologies.automation,
+      tabTarget: "data",
+      technologies: technologies.data,
     },
   ],
 };

@@ -17,9 +17,7 @@ const ICONS: Record<string, IconEntry> = {
   typescript: { pkg: "si", file: "typescript" },
   python: { pkg: "si", file: "python" },
   react: { pkg: "si", file: "react" },
-  "react.js": { pkg: "si", file: "react" },
   "next.js": { pkg: "si", file: "nextdotjs" },
-  "node.js": { pkg: "si", file: "nodedotjs" },
   fastapi: { pkg: "si", file: "fastapi" },
   postgresql: { pkg: "si", file: "postgresql" },
   docker: { pkg: "si", file: "docker" },
@@ -43,11 +41,6 @@ const ICONS: Record<string, IconEntry> = {
   facebook: { pkg: "si", file: "facebook" },
   instagram: { pkg: "si", file: "instagram" },
   "sql server": { pkg: "dev", file: "microsoftsqlserver/microsoftsqlserver-plain.svg" },
-  astro: { pkg: "si", file: "astro" },
-  "tailwind css": { pkg: "si", file: "tailwindcss" },
-  deno: { pkg: "si", file: "deno" },
-  firebase: { pkg: "si", file: "firebase" },
-  "firebase hosting": { pkg: "si", file: "firebase" },
 };
 
 const svgCache = new Map<string, string | null>();

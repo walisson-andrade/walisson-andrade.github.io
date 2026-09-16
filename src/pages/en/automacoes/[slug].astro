@@ -5,15 +5,15 @@ import AutomationDetail from "@/components/AutomationDetail.astro";
 
 export const getStaticPaths = (() => {
   const automations = loadAutomations("en");
-  return automations.map((auto, i) => ({
+  return automations.map((auto) => ({
     params: { slug: auto.slug },
-    props: { automation: auto, index: i + 1 },
+    props: { automation: auto },
   }));
 }) satisfies GetStaticPaths;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
-const { automation, index } = Astro.props as Props;
+const { automation } = Astro.props as Props;
 ---
 
-<AutomationDetail automation={automation} index={index} lang="en" />
+<AutomationDetail automation={automation} lang="en" />

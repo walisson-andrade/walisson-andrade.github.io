@@ -4,8 +4,8 @@ const siteByLang = {
   pt: {
     name: "Walisson Andrade",
     title: "Builder. Automação. IA. Produção.",
-    heroTitleMain: "Da ideia de IA ao",
-    heroTitleHighlight: "produto em produção.",
+    heroTitleMain: "Builder. Automação. IA.",
+    heroTitleHighlight: "Produção.",
     subtitle:
       "Desenvolvedor full stack e especialista em automação. Transformo processos manuais em sistemas que rodam em produção, unindo IA, low-code e engenharia de dados.",
     email: "walisson.a.andrade@gmail.com",
@@ -19,8 +19,8 @@ const siteByLang = {
   en: {
     name: "Walisson Andrade",
     title: "Builder. Automation. AI. Production.",
-    heroTitleMain: "From AI idea to",
-    heroTitleHighlight: "product in production.",
+    heroTitleMain: "Builder. Automation. AI.",
+    heroTitleHighlight: "Production.",
     subtitle:
       "Full stack developer and automation specialist. I turn manual processes into systems that run in production, combining AI, low-code and data engineering.",
     email: "walisson.a.andrade@gmail.com",
