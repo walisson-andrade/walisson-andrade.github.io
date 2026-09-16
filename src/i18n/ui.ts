@@ -28,6 +28,10 @@ export const ui = {
     "projects.viewDetails": "Ver detalhes completos",
     "projects.result": "Resultado",
 
+    "siteProjects.tag": "Sites & Landing Pages",
+    "siteProjects.title": "Sites que colocamos no ar",
+    "siteProjects.visit": "Visitar site",
+
     "automations.tag": "Automações",
     "automations.title": "Registro de automações",
 
@@ -70,6 +74,10 @@ export const ui = {
     "projects.confidentiality": "Illustrative captures. Real flows under confidentiality agreement",
     "projects.viewDetails": "View full details",
     "projects.result": "Result",
+
+    "siteProjects.tag": "Sites & Landing Pages",
+    "siteProjects.title": "Sites shipped to production",
+    "siteProjects.visit": "Visit site",
 
     "automations.tag": "Automations",
     "automations.title": "Automation log",

@@ -33,6 +33,16 @@ export interface ImpactStat {
   label: string;
 }
 
+export interface SiteProject {
+  id: string;
+  number: string;
+  segment: string;
+  title: string;
+  description: string;
+  url: string;
+  technologies: string[];
+}
+
 export interface Automation {
   slug: string;
   titulo: string;
