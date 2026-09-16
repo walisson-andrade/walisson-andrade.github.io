@@ -1,0 +1,45 @@
+---
+import type { SiteProject } from "@/lib/types";
+import TechBadge from "./TechBadge.astro";
+
+interface Props {
+  project: SiteProject;
+  visitLabel: string;
+}
+
+const { project, visitLabel } = Astro.props;
+---
+
+<div
+  class="press-hover-sm bg-surface border-2 border-ink rounded-[14px] p-[30px] flex flex-col hard-shadow-sm"
+>
+  <div class="flex items-center justify-between">
+    <span
+      class="inline-flex px-[11px] py-[5px] bg-accent border-2 border-ink rounded-[5px] font-mono text-[11px] font-bold tracking-wide text-on-accent"
+    >
+      {project.segment}
+    </span>
+    <span class="font-mono text-[13px] text-text-dim">{project.number}</span>
+  </div>
+
+  <h3 class="font-heading font-semibold text-[22px] leading-[1.2] text-ink mt-[18px] mb-4">
+    {project.title}
+  </h3>
+
+  <p class="text-[14.5px] text-text-secondary leading-[1.45] mb-5">
+    {project.description}
+  </p>
+
+  <div class="flex flex-wrap gap-[7px] mb-5">
+    {project.technologies.map((tech) => <TechBadge name={tech} />)}
+  </div>
+
+  <a
+    href={project.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="mt-auto inline-flex items-center gap-2 w-fit px-[15px] py-[9px] bg-accent border-2 border-ink rounded-[8px] font-heading font-bold text-sm text-on-accent hard-shadow-sm press-hover-sm"
+  >
+    {visitLabel} <span aria-hidden="true">↗</span>
+  </a>
+</div>

@@ -1,10 +1,12 @@
 ---
 import { getFullstackProjects } from "@/data/fullstack-projects";
+import { getSiteProjects } from "@/data/site-projects";
 import { loadAutomations } from "@/lib/loadAutomations";
 import type { Lang } from "@/i18n/ui";
 import { useTranslations } from "@/i18n/utils";
 import SectionHeading from "./SectionHeading.astro";
 import FullStackProjectCard from "./FullStackProjectCard.astro";
+import SiteProjectCard from "./SiteProjectCard.astro";
 import AutomationCard from "./AutomationCard.astro";
 import TechBadge from "./TechBadge.astro";
 
@@ -16,10 +18,12 @@ const { lang = "pt" } = Astro.props;
 const t = useTranslations(lang);
 const automations = loadAutomations(lang);
 const fullstackProjects = getFullstackProjects(lang);
+const siteProjects = getSiteProjects(lang);
 
 const tabs = [
   { id: "automacoes", label: t("projects.tab.automations"), count: automations.length },
   { id: "fullstack", label: t("projects.tab.fullstack"), count: fullstackProjects.length },
+  { id: "sites", label: t("projects.tab.sites"), count: siteProjects.length },
   { id: "data", label: t("projects.tab.data"), count: 0 },
 ] as const;
 ---
@@ -89,6 +93,22 @@ const tabs = [
       {
         fullstackProjects.map((project) => (
           <FullStackProjectCard project={project} />
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Sites & Landing Pages -->
+  <div
+    id="panel-sites"
+    role="tabpanel"
+    data-panel="sites"
+    class="tab-panel mt-8 hidden"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[22px]">
+      {
+        siteProjects.map((project) => (
+          <SiteProjectCard project={project} visitLabel={t("projects.visitSite")} />
         ))
       }
     </div>
