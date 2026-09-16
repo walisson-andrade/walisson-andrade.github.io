@@ -13,6 +13,16 @@ const siteProjectsByLang: Record<Lang, SiteProject[]> = {
       url: "https://lucio-fretes-seven.vercel.app/",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "WhatsApp API", "Google Maps", "Vercel"],
     },
+    {
+      id: "site-02",
+      number: "02",
+      segment: "Fretes & Carretos",
+      title: "Site de captação de orçamento com contato direto via WhatsApp",
+      description:
+        "Landing page para serviço de fretes e carretos em Uberlândia (MG): serviços, diferenciais, processo de contratação em 3 passos, galeria de trabalhos realizados e contato direto pelo WhatsApp.",
+      url: "https://evandro-fretes.vercel.app/",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "WhatsApp API", "Vercel"],
+    },
   ],
   en: [
     {
@@ -24,6 +34,16 @@ const siteProjectsByLang: Record<Lang, SiteProject[]> = {
         "Landing page for a small freight and moving company in Uberlândia (MG): service overview, key differentiators, a 3-step booking process, a gallery of completed jobs, and direct quote requests via WhatsApp.",
       url: "https://lucio-fretes-seven.vercel.app/",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "WhatsApp API", "Google Maps", "Vercel"],
+    },
+    {
+      id: "site-02",
+      number: "02",
+      segment: "Freight & Small Moving",
+      title: "Lead-generation site with direct WhatsApp contact",
+      description:
+        "Landing page for a freight and small moving service in Uberlândia (MG): services, differentiators, a 3-step booking process, a gallery of completed jobs, and direct contact via WhatsApp.",
+      url: "https://evandro-fretes.vercel.app/",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "WhatsApp API", "Vercel"],
     },
   ],
 };

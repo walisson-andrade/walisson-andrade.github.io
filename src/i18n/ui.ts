@@ -18,7 +18,7 @@ export const ui = {
     "hero.available": "Disponível para projetos",
 
     "stacks.tag": "Stacks de habilidades",
-    "stacks.title": "Três frentes de atuação",
+    "stacks.title": "Quatro frentes de atuação",
     "stacks.cta": "Ver projetos",
 
     "projects.tag": "Projetos",
@@ -68,7 +68,7 @@ export const ui = {
     "hero.available": "Available for projects",
 
     "stacks.tag": "Skill stacks",
-    "stacks.title": "Three lanes of work",
+    "stacks.title": "Four lanes of work",
     "stacks.cta": "View projects",
 
     "projects.tag": "Projects",
