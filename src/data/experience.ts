@@ -4,53 +4,53 @@ import type { Lang } from "@/i18n/ui";
 const experiencesByLang: Record<Lang, Experience[]> = {
   pt: [
     {
-      period: "Atual",
+      period: "2025 - atual",
       company: "NILG.AI",
-      role: "AI Software Engineer & Full Stack Developer",
+      role: "AI & Full Stack Engineer",
       description:
-        "Ponte entre inteligência artificial e produto real: desenvolvimento de soluções full stack que integram LLMs, RAG e automação a sistemas em produção, do protótipo ao deploy.",
+        "Desenvolvimento de produtos de IA e automação para clientes, do protótipo à produção, integrando LLMs, back-end e front-end.",
       isCurrent: true,
     },
     {
-      period: "Desde jan. 2024",
-      company: "Anhanguera Educacional",
-      role: "Graduação em andamento",
+      period: "2023 - 2025",
+      company: "Accenture",
+      role: "Data Science",
       description:
-        "Formação superior em andamento, com foco em desenvolvimento de software.",
+        "Cientista de dados. Modelos preditivos e analytics para operações em larga escala.",
       isCurrent: false,
     },
     {
-      period: "Formação técnica",
-      company: "Instituto Federal do Triângulo Mineiro",
-      role: "Formação técnica",
+      period: "2022 - 2023",
+      company: "Accenture",
+      role: "S&OP",
       description:
-        "Base técnica em tecnologia da informação que sustenta a atuação em desenvolvimento de software e engenharia de dados.",
+        "Analista de Supply & Operations Planning. Automação de processos e relatórios operacionais.",
       isCurrent: false,
     },
   ],
   en: [
     {
-      period: "Current",
+      period: "2025 - present",
       company: "NILG.AI",
-      role: "AI Software Engineer & Full Stack Developer",
+      role: "AI & Full Stack Engineer",
       description:
-        "Bridging artificial intelligence and real products: building full stack solutions that integrate LLMs, RAG and automation into production systems, from prototype to deployment.",
+        "Building AI and automation products for clients, from prototype to production, integrating LLMs, back-end and front-end.",
       isCurrent: true,
     },
     {
-      period: "Since Jan. 2024",
-      company: "Anhanguera Educacional",
-      role: "Ongoing degree",
+      period: "2023 - 2025",
+      company: "Accenture",
+      role: "Data Science",
       description:
-        "Ongoing higher education degree focused on software development.",
+        "Data scientist. Predictive models and analytics for large-scale operations.",
       isCurrent: false,
     },
     {
-      period: "Technical education",
-      company: "Instituto Federal do Triângulo Mineiro",
-      role: "Technical education",
+      period: "2022 - 2023",
+      company: "Accenture",
+      role: "S&OP",
       description:
-        "Technical background in information technology underpinning her work in software development and data engineering.",
+        "Supply & Operations Planning analyst. Process automation and operational reporting.",
       isCurrent: false,
     },
   ],

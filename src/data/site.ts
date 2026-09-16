@@ -2,34 +2,34 @@ import type { Lang } from "@/i18n/ui";
 
 const siteByLang = {
   pt: {
-    name: "Letícia Medeiros",
-    title: "AI Software Engineer & Full Stack Developer",
+    name: "Walisson Andrade",
+    title: "Builder. Automação. IA. Produção.",
     heroTitleMain: "Da ideia de IA ao",
     heroTitleHighlight: "produto em produção.",
     subtitle:
-      "Transformo conceitos complexos de IA em produtos reais. Para mim, inovação não é só código, é a ponte entre inteligência artificial e resultado prático de negócio.",
-    email: "tm@nilg.ai",
-    linkedin: "https://www.linkedin.com/in/leticiamn/",
-    whatsapp: "+55 34 9276-2564",
-    whatsappLink: "https://wa.me/553492762564",
+      "Desenvolvedor full stack e especialista em automação. Transformo processos manuais em sistemas que rodam em produção, unindo IA, low-code e engenharia de dados.",
+    email: "walisson.a.andrade@gmail.com",
+    linkedin: "https://www.linkedin.com/in/walisson-andrade",
+    whatsapp: "+55 34 99868-3356",
+    whatsappLink: "https://wa.me/5534998683356",
     confidentiality:
       "Projetos reais em produção. Clientes não divulgados por contrato.",
-    cta: "Quer transformar IA em produto real?",
+    cta: "Quer automatizar processos ou construir algo do zero?",
   },
   en: {
-    name: "Letícia Medeiros",
-    title: "AI Software Engineer & Full Stack Developer",
+    name: "Walisson Andrade",
+    title: "Builder. Automation. AI. Production.",
     heroTitleMain: "From AI idea to",
     heroTitleHighlight: "product in production.",
     subtitle:
-      "I turn complex AI concepts into real products. To me, innovation isn't just code, it's the bridge between artificial intelligence and practical business results.",
-    email: "tm@nilg.ai",
-    linkedin: "https://www.linkedin.com/in/leticiamn/",
-    whatsapp: "+55 34 9276-2564",
-    whatsappLink: "https://wa.me/553492762564",
+      "Full stack developer and automation specialist. I turn manual processes into systems that run in production, combining AI, low-code and data engineering.",
+    email: "walisson.a.andrade@gmail.com",
+    linkedin: "https://www.linkedin.com/in/walisson-andrade",
+    whatsapp: "+55 34 99868-3356",
+    whatsappLink: "https://wa.me/5534998683356",
     confidentiality:
       "Real projects in production. Clients undisclosed under contract.",
-    cta: "Want to turn AI into a real product?",
+    cta: "Want to automate processes or build something from scratch?",
   },
 } as const;
 
