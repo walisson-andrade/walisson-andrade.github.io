@@ -12,7 +12,7 @@ Criar uma **landing page profissional** para exibir projetos de automação (n8n
 **Localização:** Uberlândia, MG, Brasil  
 **Email:** walisson.a.andrade@gmail.com  
 **LinkedIn:** linkedin.com/in/walisson-andrade
-**Whatsapp:** +5534998683356
+**Whatsapp:** +5534999205376
 
 
 ---
@@ -170,7 +170,7 @@ Painel com números agregados de todos os projetos:
 ### 3.7 CTA (Call to Action)
 
 - Texto: *"Quer automatizar processos ou construir algo do zero? Vamos conversar."*
-- Links: LinkedIn, email (walisson.a.andrade@gmail.com), Whatsapp (+5534998683356)
+- Links: LinkedIn, email (walisson.a.andrade@gmail.com), Whatsapp (+5534999205376)
 
 ---
 
